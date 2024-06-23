@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+namespace LooneyDog
+{
+    public class GameScreen : MonoBehaviour
+    {
+        //public JoypadController JoypadController { get => _joypadController; set => _joypadController = value; }
+        //public DefaultInputActions InputActions { get => _inputActions; set => _inputActions = value; }
+
+        //[SerializeField] private JoypadController _joypadController;
+        [SerializeField] public DefaultInputActions _inputActions;
+
+        private void Awake()
+        {
+            _inputActions = new DefaultInputActions();
+            _inputActions.Enable();
+        }
+    }
+}

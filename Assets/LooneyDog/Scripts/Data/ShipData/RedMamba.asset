@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396a57dacc29b144c98ae0fe5294d67d, type: 3}
+  m_Name: RedMamba
+  m_EditorClassIdentifier: 
+  _shipId: 1
+  _speed: 0
+  _health: 60
+  _shield: 20
+  _boost: 25
+  _baseDamage: 15
+  _weapon1Capacity: 3
+  _weapon2Capacity: 2
+  _shipName: RedMamba Slither Soarer
+  _shipDiscription: 'RedMamba ship
+
+'

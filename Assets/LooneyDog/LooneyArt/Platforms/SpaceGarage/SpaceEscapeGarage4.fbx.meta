@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 92c9c12a5389e0741937a4011a227b09
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EmissionLights
+    second: {fileID: 2100000, guid: 673df52af84f6cb46946bccb08c654b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EmissionLights2
+    second: {fileID: 2100000, guid: bcd13f6ef86f6fc46ade420a9f2192b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightPanels
+    second: {fileID: 2100000, guid: 0d3b77f1a2f19b04c8738978d43c91ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarageBase
+    second: {fileID: 2100000, guid: 0a90c248d8535d74eb83c4ee3699812f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarageCeiling
+    second: {fileID: 2100000, guid: f0fb95699fd3ad742a5bede4cebd6015, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarageFloor
+    second: {fileID: 2100000, guid: 1102007d2b147f94ea305f8e9a002fc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowSilMAterial
+    second: {fileID: 2100000, guid: 259f807200270114da9b1077d14afa5f, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_SpaceGarageBase_Albedo
+    second: {fileID: 2800000, guid: f74778cd25b375443ba0587abe511263, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_SpaceGarageBase_Metalness
+    second: {fileID: 2800000, guid: 8ef6750d2864f5b49bd33af7221e4159, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_SpaceGarageBase_Normal
+    second: {fileID: 2800000, guid: c0a3755423df2664ea1b12ec2028ea20, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_SpaceGarageCeiling_Albedo
+    second: {fileID: 2800000, guid: 73b2aa2d00cc7b942bec2ac34dce1463, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_SpaceGarageCeiling_Metalness
+    second: {fileID: 2800000, guid: eaf6588df42fa0a4ab5430acd7052a54, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_SpaceGarageCeiling_Normal
+    second: {fileID: 2800000, guid: 5caef808089ba0948a591d3d7d82ac50, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_SpaceGarageFloor_Albedo
+    second: {fileID: 2800000, guid: 985a050f17f73064c91aad5c08f9a8b1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_SpaceGarageFloor_Metalness
+    second: {fileID: 2800000, guid: 5dfde1432eb1407489b98bd02f36fa7a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_SpaceGarageFloor_Normal
+    second: {fileID: 2800000, guid: 6e0d59add487d294b9814017129278c4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_WindowSilMAterial_Albedo
+    second: {fileID: 2800000, guid: 47d1ff15cf0782347bbae27e9ffec6e8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_WindowSilMAterial_Metalness
+    second: {fileID: 2800000, guid: beff7a8af852d33488b8839bd56fe24e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpaceGarage_WindowSilMAterial_Normal
+    second: {fileID: 2800000, guid: 01456a16aa05a0244975e95da5733b1e, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 3
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
