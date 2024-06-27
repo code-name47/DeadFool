@@ -44,7 +44,7 @@ namespace LooneyDog
             //_shipDirection = Input.get
             //_shipDirection = inputActions.Player.Move.ReadValue<Vector2>();
             //if (_shipDirection != Vector2.zero) {
-                transform.localPosition = new Vector3(transform.localPosition.x + ((_shipDirection.x * _shipForwardSpeed) * Time.deltaTime), 0, transform.localPosition.z + ((_shipDirection.y * _shipForwardSpeed) * Time.deltaTime));
+                transform.localPosition = new Vector3(transform.localPosition.x + ((_shipDirection.x * _shipForwardSpeed) * Time.deltaTime), transform.position.y, transform.localPosition.z + ((_shipDirection.y * _shipForwardSpeed) * Time.deltaTime));
             //}
         }
     }

@@ -11,8 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/LooneyDog/Scenes/Home.unity
     guid: 72dfbb4eedf297e4c87c4eef44d24d6b
-  - enabled: 1
+  - enabled: 0
     path: Assets/LooneyDog/Scenes/Game.unity
     guid: c767410bee41a7143b76aaad70a7c9ae
+  - enabled: 1
+    path: Assets/LooneyDog/Scenes/Dhruv/Game_Test.unity
+    guid: c3b129be4a925c04d9e812ba2dc75e30
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ccaf8e3c1c9eeec4abf92409fff77ba9, type: 2}
