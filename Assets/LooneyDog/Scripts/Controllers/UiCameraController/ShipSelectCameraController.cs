@@ -26,6 +26,10 @@ namespace LooneyDog
         {
             
         }
+
+        public void OnRotateButtonPressed(float x) {
+            _input.x = x;
+        }
         public void OnMove(InputValue input)
         {
             _input = input.Get<Vector2>();
