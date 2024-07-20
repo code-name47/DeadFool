@@ -16,12 +16,12 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DeadPool_Albedo
-    second: {fileID: 2800000, guid: 738b74708b60a2a4fa399d4a1a14fa9e, type: 3}
+    second: {fileID: 2800000, guid: 10102a6a91d689d46b819447fbbb7d37, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

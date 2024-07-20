@@ -10,6 +10,7 @@ namespace LooneyDog
     {
         public Button BackButton { get => _backButton; set => _backButton = value; }
         public float TransitionSpeed { get => _transitionSpeed; set => _transitionSpeed = value; }
+        public int NormalizedInput { get => _normalizedInput; set => _normalizedInput = value; }
 
         [Header("Buttons")]
         [SerializeField] private Button _backButton;
@@ -19,8 +20,8 @@ namespace LooneyDog
         [SerializeField] private Button _shipSwitchLeftButton;
 
         [Header("Ui")]
-        [SerializeField] private TextMeshProUGUI _shipName;
-        [SerializeField] private TextMeshProUGUI _shipDescriptionText;
+        [SerializeField] private TextMeshProUGUI _CharacterName;
+        [SerializeField] private TextMeshProUGUI _CharacterDiscriptionText;
         [SerializeField] private Image _speedFillMeter, _hullFillMeter, _armorFillMeter, _thrustFillMeter;
         [SerializeField] private Image _baseDamageFillMeter, _weaponCapacity_1, _weaponCapacity_2;
         
@@ -28,6 +29,9 @@ namespace LooneyDog
         [Header("Properties")]
         [SerializeField] private float _transitionSpeed;
         [SerializeField] private int _normalizedInput;
+
+        [Header("Scene")]
+        [SerializeField] ShipSelectCameraController _cameraController;
 
         private void Awake()
         {
@@ -44,48 +48,57 @@ namespace LooneyDog
         }
 
         private void OnClickLeftRotateButton() {
-            _normalizedInput = -1;
+            NormalizedInput = -1;
+            _cameraController.OnRotateButtonPressed(NormalizedInput);
         }
 
         private void OnClickRightRotateButton()
         {
-            _normalizedInput = 1;
+            NormalizedInput = 1;
+            _cameraController.OnRotateButtonPressed(NormalizedInput);
         }
 
         private void onClickShipSwitchRightButton()
         {
-            if (GameManager.Game.Level.ShipSelectController != null)
+            if (GameManager.Game.Level.PlayerSelectController != null)
             {
-                GameManager.Game.Level.ShipSelectController.OnPressedNext();
+                GameManager.Game.Level.PlayerSelectController.OnPressedNext();
             }
             else
             {
-                Debug.Log("Error : ShipselectController not assigned to LevelManager");
+                Debug.Log("Error : PlayerSelectController not assigned to LevelManager");
             }
         }
 
         private void onClickShipSwitchLeftButton()
         {
-            if (GameManager.Game.Level.ShipSelectController != null)
+            if (GameManager.Game.Level.PlayerSelectController != null)
             {
-                GameManager.Game.Level.ShipSelectController.OnPressedPrevious();
+                GameManager.Game.Level.PlayerSelectController.OnPressedPrevious();
             }
             else
             {
-                Debug.Log("Error : ShipselectController not assigned to LevelManager");
+                Debug.Log("Error :  PlayerSelectController not assigned to LevelManager");
             }
         }
 
-        public void SetShipData(string ShipName, string ShipDescription,float speed,float hull,float armor,float thrust
+       /* public void SetShipData(string ShipName, string CharacterDiscription,float speed,float hull,float armor,float thrust
             ,float baseDamage,float weaponCapacity1,float weaponCapacity2) {
             _shipName.text = ShipName;
-            _shipDescriptionText.text = ShipDescription;
+            _CharacterDiscriptionText.text = CharacterDiscription;
             _speedFillMeter.fillAmount = speed;
             _hullFillMeter.fillAmount = hull;
             _armorFillMeter.fillAmount = armor;
             _baseDamageFillMeter.fillAmount = baseDamage;
             _weaponCapacity_1.fillAmount = weaponCapacity1;
             _weaponCapacity_2.fillAmount = weaponCapacity2;
+        }*/
+
+        public void SetCharacter(float speed, float armor, float gunPower, float katanDamage)
+        {
+            _speedFillMeter.fillAmount = speed;
+            _armorFillMeter.fillAmount = armor;
+            _baseDamageFillMeter.fillAmount = gunPower;
         }
     }
 }

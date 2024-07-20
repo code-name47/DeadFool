@@ -66,7 +66,7 @@ namespace LooneyDog
         }
 
         private void SetShipUiData() {
-            GameManager.Game.Screen.Shop.SetShipData(
+            /*GameManager.Game.Screen.Shop.SetShipData(
                 GameManager.Game.Skin.ShipSkins[(int)_activeShip].ShipName,
                 GameManager.Game.Skin.ShipSkins[(int)_activeShip].ShipDiscription,
                 GameManager.Game.Skin.ShipSkins[(int)_activeShip].Speed / 100,
@@ -75,7 +75,7 @@ namespace LooneyDog
                 GameManager.Game.Skin.ShipSkins[(int)_activeShip].Boost / 100,
                 GameManager.Game.Skin.ShipSkins[(int)_activeShip].BaseDamage / 100,
                 (float)GameManager.Game.Skin.ShipSkins[(int)_activeShip].Weapon1Capacity / 20,
-                (float)GameManager.Game.Skin.ShipSkins[(int)_activeShip].Weapon2Capacity / 20);
+                (float)GameManager.Game.Skin.ShipSkins[(int)_activeShip].Weapon2Capacity / 20);*/
         }
     }
 }
