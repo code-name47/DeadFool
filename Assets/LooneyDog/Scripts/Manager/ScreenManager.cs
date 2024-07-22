@@ -162,17 +162,17 @@ public TopMenu Top { get { return _topMenu; } set { _topMenu = value; } }*/
             for (int i = 0; i < images.Length; i++)
             {
                 images[i].color =
-                    new Color((byte)images[i].color.r
-                    , (byte)images[i].color.g
-                    , (byte)images[i].color.b
+                    new Color(images[i].color.r
+                    , images[i].color.g
+                    , images[i].color.b
                     , alphaValue);
             }
             for (int i = 0; i < texts.Length; i++)
             {
                 texts[i].color =
-                    new Color((byte)texts[i].color.r
-                    , (byte)texts[i].color.g
-                    , (byte)texts[i].color.b
+                    new Color(texts[i].color.r
+                    , texts[i].color.g
+                    , texts[i].color.b
                     , alphaValue);
             }
         }
@@ -182,17 +182,17 @@ public TopMenu Top { get { return _topMenu; } set { _topMenu = value; } }*/
             for (int i = 0; i < images.Length; i++)
             {
                 images[i].color =
-                    new Color((byte)images[i].color.r
-                    , (byte)images[i].color.g
-                    , (byte)images[i].color.b
+                    new Color(images[i].color.r
+                    , images[i].color.g
+                    , images[i].color.b
                     , alphaValueImages[i]);
             }
             for (int i = 0; i < texts.Length; i++)
             {
                 texts[i].color =
-                    new Color((byte)texts[i].color.r
-                    , (byte)texts[i].color.g
-                    , (byte)texts[i].color.b
+                    new Color(texts[i].color.r
+                    , texts[i].color.g
+                    , texts[i].color.b
                     , alphaValueText[i]);
             }
 
