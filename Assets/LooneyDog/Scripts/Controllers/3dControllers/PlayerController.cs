@@ -10,11 +10,25 @@ namespace LooneyDog
         [SerializeField] private Vector2 _playerDirection;
         [SerializeField] private float _playerSpeed,_playerRotationSpeed;
         [SerializeField] private Animator _playerAnimator;
+        [SerializeField] private float _hitDelay, _smallHitDelay, _hitMoveDistance;
+        [SerializeField] private BoxCollider _playerCollider;
+        [SerializeField] private DialogueController _dialogueController;
+        private bool _isGettingHit = false;
+        [SerializeField] private bool _iswieldedKatana=false,_isdeflecting=false,_isWeildingGun;
+        [SerializeField] private GameObject _katana;
+        [SerializeField] private GunController _gunLeft,_gunRight;
 
+        public bool IswieldedKatana { get => _iswieldedKatana; set => _iswieldedKatana = value; }
 
         private void FixedUpdate()
         {
-            MovePlayer();
+            if (!_isGettingHit)
+            {
+                MovePlayer();
+            }
+           /* else {
+                transform.position = Vector3.Lerp(transform.position, transform.position + transform.forward*_hitMoveDistance, _hitDelay*Time.deltaTime); 
+            }*/
         }
 
         public void OnMove(InputValue input)
@@ -23,14 +37,50 @@ namespace LooneyDog
             _playerAnimator.SetFloat("Moving", _playerDirection.magnitude);
         }
 
+        public void GettingHit() {
+            _playerAnimator.SetTrigger("GettingHit");
+            //_dialogueController.CallDialogue(DialogId.Ouch);
+            _dialogueController.CallGettingHitDialogue();
+            _playerCollider.enabled = false;
+            //_isGettingHit = true;
+            StartCoroutine(WaitTillHit(_hitDelay));
+        }
+        public void GettingSmallHit()
+        {
+            if (!_isdeflecting)
+            {
+                _isdeflecting = true;
+                _playerAnimator.SetTrigger("GettingSmallHit");
+                //_dialogueController.CallDialogue(DialogId.Ouch);
+                _dialogueController.CallGettingHitDialogue();
+            }
+            
+            if (!_iswieldedKatana)
+            {
+                Debug.Log("katanaHit Called");
+                _playerCollider.enabled = false;
+                _isGettingHit = true;
+            }
+            StartCoroutine(WaitTillHit(_smallHitDelay));
+        }
 
+        public void OnFireLeft() {
+            _gunLeft.GunAnimator.SetTrigger("Fire");
+        }
+        public void OnFireRight()
+        {
+            _gunRight.GunAnimator.SetTrigger("Fire");
+        }
+
+        IEnumerator WaitTillHit(float hitDelay) {
+            yield return new WaitForSeconds(hitDelay);
+            _isGettingHit = false;
+            _playerCollider.enabled = true;
+            _isdeflecting = false;
+        }
 
         private void MovePlayer()
         {
-
-            /*transform.localPosition = new Vector3(transform.localPosition.x + ((_playerDirection.x * _playerSpeed) * Time.deltaTime), transform.position.y, transform.localPosition.z + ((_playerDirection.y * _playerSpeed) * Time.deltaTime));
-            Quaternion LookRotation = Quaternion.LookRotation(transform.forward*_playerDirection, Vector3.up);
-            transform.rotation = LookRotation;*/
             if (_playerDirection != Vector2.zero)
             {
                 Vector3 moveDirection = new Vector3(_playerDirection.x, 0, _playerDirection.y).normalized;
@@ -44,5 +94,5 @@ namespace LooneyDog
 
         }
     }
-
+ 
 }
