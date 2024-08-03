@@ -11,6 +11,7 @@ namespace LooneyDog
         public Button BackButton { get => _backButton; set => _backButton = value; }
         public float TransitionSpeed { get => _transitionSpeed; set => _transitionSpeed = value; }
         public int NormalizedInput { get => _normalizedInput; set => _normalizedInput = value; }
+        public ShopPanel ShopPanel { get => _shopPanel; set => _shopPanel = value; }
 
         [Header("Buttons")]
         [SerializeField] private Button _backButton;
@@ -24,6 +25,7 @@ namespace LooneyDog
         [SerializeField] private TextMeshProUGUI _CharacterDiscriptionText;
         [SerializeField] private Image _speedFillMeter, _hullFillMeter, _armorFillMeter, _thrustFillMeter;
         [SerializeField] private Image _baseDamageFillMeter, _weaponCapacity_1, _weaponCapacity_2;
+        [SerializeField] private ShopPanel _shopPanel;
         
 
         [Header("Properties")]
@@ -41,8 +43,13 @@ namespace LooneyDog
             _shipSwitchLeftButton.onClick.AddListener(onClickShipSwitchLeftButton);
             _shipSwitchRightButton.onClick.AddListener(onClickShipSwitchRightButton);
         }
+        private void OnEnable()
+        {
+            GameManager.Game.Level.PlayerSelectController.ActivateCharacter(GameManager.Game.Level.PlayerSelectController.ActiveCharacter);
+        }
 
         private void OnClickBackButton() {
+            GameManager.Game.Level.PlayerSelectController.DisableCharacters();
             GameManager.Game.Screen.ClosePopUpScreen(gameObject.transform, GameManager.Game.Screen.Home.transform, ScreenLocation.down, _transitionSpeed, true);
             GameManager.Game.Screen.OpenPopUpScreen(GameManager.Game.Screen.Home.transform, ScreenLocation.down, _transitionSpeed);
         }
