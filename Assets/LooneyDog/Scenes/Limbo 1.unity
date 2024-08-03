@@ -815,6 +815,7 @@ MonoBehaviour:
   _baseDamageFillMeter: {fileID: 1627109631}
   _weaponCapacity_1: {fileID: 1766562602}
   _weaponCapacity_2: {fileID: 2138250525}
+  _shopPanel: {fileID: 498844233}
   _transitionSpeed: 1
   _normalizedInput: 0
   _cameraController: {fileID: 0}
@@ -2905,6 +2906,9 @@ MonoBehaviour:
   _thrust: {fileID: 0}
   _shipDescription: {fileID: 1555972521}
   _shipName: {fileID: 1653134214}
+  _buyButton: {fileID: 874247489}
+  _selectButton: {fileID: 445547373}
+  _selectedButton: {fileID: 1440852545}
 --- !u!1 &509087652
 GameObject:
   m_ObjectHideFlags: 0

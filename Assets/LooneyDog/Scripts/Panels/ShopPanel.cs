@@ -12,6 +12,10 @@ namespace LooneyDog
         [SerializeField] private Image _speed,_hull,_armor,_thrust;
         [SerializeField] private TextMeshProUGUI _shipDescription;
         [SerializeField] private TextMeshProUGUI _shipName;
+
+        [Header("Button Unloackables")]
+        [SerializeField] private Button _buyButton, _selectButton, _selectedButton;
+       
         public void SetShipAttributes(string shipName,float speed, float hull, float armor, float thrust, string description) {
             _speed.fillAmount = speed / 100f;
             _hull.fillAmount = hull / 100f;
@@ -19,6 +23,39 @@ namespace LooneyDog
             _thrust.fillAmount = thrust / 100f;
             _shipDescription.text = description;
             _shipName.text = shipName;
+        }
+        public void SetCharacterStatus(CharacterId CharacterIds)
+        {
+            if (GameManager.Game.Skin.CharacterObject[(int)CharacterIds].Owned)
+            {
+                if (GameManager.Game.Skin.CharacterObject[(int)CharacterIds].Selected)
+                {
+                    _buyButton.gameObject.SetActive(false);
+                    _selectButton.gameObject.SetActive(false);
+                    _selectedButton.gameObject.SetActive(true);
+
+                    /*GameManager.Game.Screen.Home.CharacterSelectPanel.BuyButton.gameObject.SetActive(false);
+                    GameManager.Game.Screen.Home.CharacterSelectPanel.SelectButton.gameObject.SetActive(false);*/
+                }
+                else
+                {
+                    _buyButton.gameObject.SetActive(false);
+                    _selectButton.gameObject.SetActive(true);
+                    _selectedButton.gameObject.SetActive(false);
+
+                    /*GameManager.Game.Screen.Home.CharacterSelectPanel.BuyButton.gameObject.SetActive(false);
+                    GameManager.Game.Screen.Home.CharacterSelectPanel.SelectButton.gameObject.SetActive(true);*/
+                }
+            }
+            else
+            {
+                _buyButton.gameObject.SetActive(true);
+                _selectButton.gameObject.SetActive(false);
+                _selectedButton.gameObject.SetActive(false);
+
+                /*GameManager.Game.Screen.Home.CharacterSelectPanel.BuyButton.gameObject.SetActive(true);
+                GameManager.Game.Screen.Home.CharacterSelectPanel.SelectButton.gameObject.SetActive(false);*/
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace LooneyDog
         {
             GameManager.Game.Level.PlayerSelectController = this;
             ActiveCharacter = GameManager.Game.Skin.CurrentActiveCharacter;
-            ActivateCharacter(ActiveCharacter);
+            //ActivateCharacter(ActiveCharacter);
         }
 
         public void OnPressedNext()
@@ -44,7 +44,7 @@ namespace LooneyDog
             }
         }
 
-        private void ActivateCharacter(CharacterId ActiveCharacter)
+        public void ActivateCharacter(CharacterId ActiveCharacter)
         {
             if (_characterModels.Length == _characterTimeLines.Length)
             {
@@ -67,6 +67,22 @@ namespace LooneyDog
             {
                 Debug.Log("Error Character TimeLine missing or the model of the character is missing");
             }
+            
+        }
+
+        public void DisableCharacters() {
+            if (_characterModels.Length == _characterTimeLines.Length)
+            {
+                for (int i = 0; i < _characterModels.Length; i++)
+                {
+                    _characterModels[i].gameObject.SetActive(false);
+                    _characterTimeLines[i].gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                Debug.Log("Error Character TimeLine missing or the model of the character is missing");
+            }
         }
 
         private void SetCharacterUiData()
@@ -76,6 +92,7 @@ namespace LooneyDog
                 GameManager.Game.Skin.CharacterObject[(int)_activeCharacter].Armor / 100,
                 GameManager.Game.Skin.CharacterObject[(int)_activeCharacter].GunPower / 100,
                 GameManager.Game.Skin.CharacterObject[(int)_activeCharacter].KatanaDamage / 100);
+            GameManager.Game.Screen.Shop.ShopPanel.SetCharacterStatus(ActiveCharacter);
         }
     }
 }
