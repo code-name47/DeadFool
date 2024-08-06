@@ -52,6 +52,8 @@ namespace LooneyDog
             GameManager.Game.Level.PlayerSelectController.DisableCharacters();
             GameManager.Game.Screen.ClosePopUpScreen(gameObject.transform, GameManager.Game.Screen.Home.transform, ScreenLocation.down, _transitionSpeed, true);
             GameManager.Game.Screen.OpenPopUpScreen(GameManager.Game.Screen.Home.transform, ScreenLocation.down, _transitionSpeed);
+            GameManager.Game.Sound.PlayUisound(UiClipId.Click);
+
         }
 
         private void OnClickLeftRotateButton() {
@@ -75,6 +77,8 @@ namespace LooneyDog
             {
                 Debug.Log("Error : PlayerSelectController not assigned to LevelManager");
             }
+            GameManager.Game.Sound.PlayUisound(UiClipId.Swish);
+
         }
 
         private void onClickShipSwitchLeftButton()
@@ -87,19 +91,21 @@ namespace LooneyDog
             {
                 Debug.Log("Error :  PlayerSelectController not assigned to LevelManager");
             }
+            GameManager.Game.Sound.PlayUisound(UiClipId.Swish);
+
         }
 
-       /* public void SetShipData(string ShipName, string CharacterDiscription,float speed,float hull,float armor,float thrust
-            ,float baseDamage,float weaponCapacity1,float weaponCapacity2) {
-            _shipName.text = ShipName;
-            _CharacterDiscriptionText.text = CharacterDiscription;
-            _speedFillMeter.fillAmount = speed;
-            _hullFillMeter.fillAmount = hull;
-            _armorFillMeter.fillAmount = armor;
-            _baseDamageFillMeter.fillAmount = baseDamage;
-            _weaponCapacity_1.fillAmount = weaponCapacity1;
-            _weaponCapacity_2.fillAmount = weaponCapacity2;
-        }*/
+        /* public void SetShipData(string ShipName, string CharacterDiscription,float speed,float hull,float armor,float thrust
+             ,float baseDamage,float weaponCapacity1,float weaponCapacity2) {
+             _shipName.text = ShipName;
+             _CharacterDiscriptionText.text = CharacterDiscription;
+             _speedFillMeter.fillAmount = speed;
+             _hullFillMeter.fillAmount = hull;
+             _armorFillMeter.fillAmount = armor;
+             _baseDamageFillMeter.fillAmount = baseDamage;
+             _weaponCapacity_1.fillAmount = weaponCapacity1;
+             _weaponCapacity_2.fillAmount = weaponCapacity2;
+         }*/
 
         public void SetCharacter(float speed, float armor, float gunPower, float katanDamage)
         {

@@ -49,6 +49,8 @@ namespace LooneyDog
         }
 
         public void OnClickExitButton() {
+            GameManager.Game.Sound.PlayUisound(UiClipId.Click);
+
             Application.Quit();
         }
 
@@ -60,6 +62,7 @@ namespace LooneyDog
         }
 
         public void OnClickRestButton() {
+            GameManager.Game.Sound.PlayUisound(UiClipId.Click);
             GameManager.Game.Skin.SetShipDataSpeedToZeroTest();
         }
  
