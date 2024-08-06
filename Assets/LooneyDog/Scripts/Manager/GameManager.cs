@@ -15,8 +15,8 @@ namespace LooneyDog
         //public AnimationManager Anime;
         public SkinManager Skin;
         //public PoolManager Pool;
-
-        //public SoundManager Sound;
+        
+        public SoundManager Sound;
         /*public AdManager Admob;*/
         /* 
          public SoundManager Sound;*/

@@ -30,9 +30,13 @@ namespace LooneyDog
             _exitButton.onClick.AddListener(OnClickExitButton);
             _resetButton.onClick.AddListener(OnClickRestButton);
         }
-        
+        private void OnEnable()
+        {
+            GameManager.Game.Sound.PlayMusic(MusicClipId.Action);
+        }
         public void OnCLickStartButton() {
             GameManager.Game.Screen.Load.LoadLevel(2,GameDifficulty.Easy,gameObject);
+            GameManager.Game.Sound.PlayUisound(UiClipId.Click);
 
             /*GameManager.Game.Screen.LoadFadeScreen(this.gameObject, GameManager.Game.Screen.Load.gameObject);*/
         }
@@ -40,6 +44,8 @@ namespace LooneyDog
         public void OnClickSettingButton() {
             GameManager.Game.Screen.OpenPopUpScreen(GameManager.Game.Screen.Setting.transform,transform, ScreenLocation.right, _transitionSpeed,true);
             GameManager.Game.Screen.ClosePopUpScreen(this.transform, ScreenLocation.right, _transitionSpeed);
+            GameManager.Game.Sound.PlayUisound(UiClipId.Click);
+
         }
 
         public void OnClickExitButton() {
@@ -49,6 +55,8 @@ namespace LooneyDog
         public void OnClickShopButton() {
             GameManager.Game.Screen.OpenPopUpScreen(GameManager.Game.Screen.Shop.transform, transform, ScreenLocation.down, _transitionSpeed, true);
             GameManager.Game.Screen.ClosePopUpScreen(this.transform, ScreenLocation.right, _transitionSpeed);
+            GameManager.Game.Sound.PlayUisound(UiClipId.Click);
+
         }
 
         public void OnClickRestButton() {
