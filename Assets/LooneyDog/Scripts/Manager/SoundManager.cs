@@ -67,10 +67,6 @@ namespace LooneyDog
        turretfiring=10,
        turretblast=11,
        nextwavesound=12
-
-
-
-
     }
 
 
