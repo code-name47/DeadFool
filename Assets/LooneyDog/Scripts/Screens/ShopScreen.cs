@@ -45,7 +45,8 @@ namespace LooneyDog
         }
         private void OnEnable()
         {
-            GameManager.Game.Level.PlayerSelectController.ActivateCharacter(GameManager.Game.Level.PlayerSelectController.ActiveCharacter);
+            //GameManager.Game.Level.PlayerSelectController.ActivateCharacter(GameManager.Game.Level.PlayerSelectController.ActiveCharacter);
+            GameManager.Game.Level.PlayerSelectController.ActivateCharacter(GameManager.Game.Skin.CurrentActiveCharacter);
         }
 
         private void OnClickBackButton() {

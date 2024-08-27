@@ -19,6 +19,10 @@ namespace LooneyDog
             //ActivateCharacter(ActiveCharacter);
         }
 
+        public void SetActiveCharacter() {
+            ActiveCharacter = GameManager.Game.Skin.CurrentActiveCharacter;
+        }
+
         public void OnPressedNext()
         {
             if ((int)ActiveCharacter < _characterModels.Length - 1)

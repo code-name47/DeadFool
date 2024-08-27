@@ -15,10 +15,18 @@ namespace LooneyDog
         [SerializeField] private DialogueController _dialogueController;
         private bool _isGettingHit = false;
         [SerializeField] private bool _iswieldedKatana=false,_isdeflecting=false,_isWeildingGun;
-        [SerializeField] private GameObject _katana;
+        [SerializeField] private KatanaController _katana;
         [SerializeField] private GunController _gunLeft,_gunRight;
 
         public bool IswieldedKatana { get => _iswieldedKatana; set => _iswieldedKatana = value; }
+        public GunController GunLeft { get => _gunLeft; set => _gunLeft = value; }
+        public KatanaController Katana { get => _katana; set => _katana = value; }
+        public Animator PlayerAnimator { get => _playerAnimator; set => _playerAnimator = value; }
+
+        private void OnEnable()
+        {
+            GameManager.Game.Level.CurrentPlayerController = this;
+        }
 
         private void FixedUpdate()
         {
@@ -34,11 +42,11 @@ namespace LooneyDog
         public void OnMove(InputValue input)
         {
             _playerDirection = input.Get<Vector2>();
-            _playerAnimator.SetFloat("Moving", _playerDirection.magnitude);
+            PlayerAnimator.SetFloat("Moving", _playerDirection.magnitude);
         }
 
         public void GettingHit() {
-            _playerAnimator.SetTrigger("GettingHit");
+            PlayerAnimator.SetTrigger("GettingHit");
             //_dialogueController.CallDialogue(DialogId.Ouch);
             _dialogueController.CallGettingHitDialogue();
             _playerCollider.enabled = false;
@@ -47,10 +55,14 @@ namespace LooneyDog
         }
         public void GettingSmallHit()
         {
+            if (_isWeildingGun) {
+                PlayerAnimator.SetLayerWeight(1, 0);
+            }
+
             if (!_isdeflecting)
             {
                 _isdeflecting = true;
-                _playerAnimator.SetTrigger("GettingSmallHit");
+                PlayerAnimator.SetTrigger("GettingSmallHit");
                 //_dialogueController.CallDialogue(DialogId.Ouch);
                 _dialogueController.CallGettingHitDialogue();
             }
@@ -65,7 +77,7 @@ namespace LooneyDog
         }
 
         public void OnFireLeft() {
-            _gunLeft.GunAnimator.SetTrigger("Fire");
+            GunLeft.GunAnimator.SetTrigger("Fire");
         }
         public void OnFireRight()
         {
@@ -74,6 +86,11 @@ namespace LooneyDog
 
         IEnumerator WaitTillHit(float hitDelay) {
             yield return new WaitForSeconds(hitDelay);
+            if (_isWeildingGun)
+            {
+                PlayerAnimator.SetLayerWeight(1, 1);
+            }
+
             _isGettingHit = false;
             _playerCollider.enabled = true;
             _isdeflecting = false;

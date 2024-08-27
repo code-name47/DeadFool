@@ -15,7 +15,23 @@ namespace LooneyDog
 
         [Header("Button Unloackables")]
         [SerializeField] private Button _buyButton, _selectButton, _selectedButton;
-       
+
+        private void Awake()
+        {
+            _buyButton.onClick.AddListener(OnClickBuyButton);
+            _selectButton.onClick.AddListener(OnClickSelectButton);
+        }
+
+        private void OnClickBuyButton() { }
+
+        private void OnClickSelectButton() {
+            GameManager.Game.Skin.SetActiveCharacter(GameManager.Game.Level.PlayerSelectController.ActiveCharacter);
+            GameManager.Game.Skin.GetActiveCharacter();
+            SetCharacterStatus(GameManager.Game.Skin.CurrentActiveCharacter);
+        }
+
+        
+
         public void SetShipAttributes(string shipName,float speed, float hull, float armor, float thrust, string description) {
             _speed.fillAmount = speed / 100f;
             _hull.fillAmount = hull / 100f;

@@ -18,8 +18,10 @@ namespace LooneyDog
 
         public void Fire()
         {
-            Instantiate(_bulletMuzzle, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_bulletSpwanPoint.transform.forward));
-            Instantiate(_bullet, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_bulletSpwanPoint.transform.forward));
+            //Instantiate(_bulletMuzzle, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_bulletSpwanPoint.transform.forward));
+            //Instantiate(_bullet, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_bulletSpwanPoint.transform.forward));
+            Instantiate(_bulletMuzzle, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_parentTransform.forward));
+            Instantiate(_bullet, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_parentTransform.forward));
             _bulletShell.Play();
         }
     }

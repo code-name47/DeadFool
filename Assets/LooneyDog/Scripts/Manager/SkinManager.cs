@@ -38,5 +38,19 @@ namespace LooneyDog
                 }
             }
         }
+
+        public void SetActiveCharacter(CharacterId characterId) {
+            foreach (CharacterData characterData in CharacterObject)
+            {
+                if (characterData.CharacterId == characterId)
+                {
+                    characterData.Selected = true;
+                }
+                else
+                {
+                    characterData.Selected = false;
+                }
+            }
+        }
     }
 }

@@ -55,6 +55,7 @@ namespace LooneyDog
         }
 
         public void OnClickShopButton() {
+            GameManager.Game.Level.PlayerSelectController.SetActiveCharacter();
             GameManager.Game.Screen.OpenPopUpScreen(GameManager.Game.Screen.Shop.transform, transform, ScreenLocation.down, _transitionSpeed, true);
             GameManager.Game.Screen.ClosePopUpScreen(this.transform, ScreenLocation.right, _transitionSpeed);
             GameManager.Game.Sound.PlayUisound(UiClipId.Click);

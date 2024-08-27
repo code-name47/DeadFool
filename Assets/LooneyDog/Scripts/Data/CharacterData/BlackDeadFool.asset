@@ -17,5 +17,5 @@ MonoBehaviour:
   _katanaDamage: 14.3
   _health: 12.2
   _armor: 24.4
-  _owned: 0
+  _owned: 1
   _selected: 0

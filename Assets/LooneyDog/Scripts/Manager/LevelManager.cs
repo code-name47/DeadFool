@@ -10,6 +10,7 @@ namespace LooneyDog
         public GameDifficulty Difficulty { get => _difficulty; set => _difficulty = value; }
         public ShipSelectController ShipSelectController { get => _shipSelectController; set => _shipSelectController = value; }
         public PlayerSelectController PlayerSelectController { get => _playerSelectController; set => _playerSelectController = value; }
+        public PlayerController CurrentPlayerController { get => _currentPlayerController; set => _currentPlayerController = value; }
 
         [Header("Level Details")]
         [SerializeField] private int _levelNumber;
@@ -19,6 +20,7 @@ namespace LooneyDog
         [Header("Level Controllers")]
         [SerializeField] private ShipSelectController _shipSelectController;
         [SerializeField] private PlayerSelectController _playerSelectController;
+        [SerializeField] private PlayerController _currentPlayerController;
         private LevelDataStruct Currentleveldata;
 
         public void SetCurrentLevelDetails(int levelnumber, GameDifficulty difficulty) //Called From LoadingScreen 
