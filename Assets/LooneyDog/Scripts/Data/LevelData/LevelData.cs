@@ -16,12 +16,21 @@ namespace LooneyDog
         [SerializeField] private int _levelNumber;
         [SerializeField] private bool _levelCompleted;
         [SerializeField] private int _starsObtained;
+       
+
 
         public LevelDataStruct[] datas = new LevelDataStruct[3];
+
+        public WaveDataStruct[] waves = new WaveDataStruct[3];
 
         public LevelDataStruct GetLevelData(GameDifficulty difficulty)
         {
             return datas[(int)difficulty];
+        }
+
+        public WaveDataStruct[] GetWaveDataStruct()
+        {
+            return waves;
         }
 
         public void SetLevelData(bool LevelCompleted, int starsObtained)
@@ -42,4 +51,11 @@ namespace LooneyDog
         [SerializeField] public int rewardfor2Star;
         [SerializeField] public int rewardfor3Star;
     }
+
+    [Serializable]
+    public struct WaveDataStruct
+    {
+        [SerializeField] public TurretType[] Turretformation;
+    }
+
 }

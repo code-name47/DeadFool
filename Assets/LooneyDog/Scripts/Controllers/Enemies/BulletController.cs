@@ -8,7 +8,10 @@ namespace LooneyDog
         [SerializeField] private float _bulletSpeed;
         [SerializeField] private GameObject _hitFlash;
         [SerializeField] private BulletType _bulletType;
-        
+        [SerializeField] private float _bulletDamage;
+
+        public float BulletDamage { get => _bulletDamage; set => _bulletDamage = value; }
+
         private void OnEnable()
         {
             //transform.localPosition = transform.forward * _bulletSpeed * Time.deltaTime;
@@ -31,10 +34,12 @@ namespace LooneyDog
                     if (!playercontroller.IswieldedKatana)
                     {
                         Destroy(gameObject);
+                        playercontroller.ReduceHeath(_bulletDamage);
                     }
                     else
                     {
                         transform.rotation = other.transform.rotation;
+                        _bulletType = BulletType.Friendly;
                     }
                 }
             }
@@ -42,6 +47,14 @@ namespace LooneyDog
                 if (other.CompareTag("Enemy"))
                 {
                     Instantiate(_hitFlash, transform.position, transform.rotation);
+                    if (other.GetComponent<EnemyBodyController>() != null)
+                    {
+                        other.GetComponent<EnemyBodyController>().GettingHit(BulletDamage);
+                    }
+                    else
+                    {
+                        Debug.Log("No Emeny Body Controller found on Enemy");
+                    }
                     Destroy(gameObject);
                 }
             }

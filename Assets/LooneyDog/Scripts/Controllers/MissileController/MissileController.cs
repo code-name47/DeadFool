@@ -47,15 +47,20 @@ namespace LooneyDog
                     //Do Nothing
                     Debug.Log("Error : Player Controller Not Found When Missile Hit");
                 }
-                Instantiate(_hitParticle,transform.position,Quaternion.identity);
-                Destroy(gameObject);
+                
             }
 
             if (other.CompareTag("Enemy"))
             {
-                Instantiate(_hitParticle, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                DestroyGameObject();
+               /* Instantiate(_hitParticle, transform.position, Quaternion.identity);
+                Destroy(gameObject);*/
             }
+        }
+
+        public void DestroyGameObject() {
+            Instantiate(_hitParticle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

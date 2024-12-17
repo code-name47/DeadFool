@@ -13,7 +13,9 @@ namespace LooneyDog
             _backButton.onClick.AddListener(OnClickBackButton);
         }
         private void OnClickBackButton() {
+            Debug.Log("Resume Button Pressed");
             GameManager.Game.Screen.ClosePopUpScreen(this.transform, GameManager.Game.Screen.GameScreen.transform, ScreenLocation.Pop, _transitionTime, true);
+            GameManager.Game.Screen.GameScreen.ResumeGame();
         }
     }
 }

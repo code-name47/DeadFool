@@ -34,3 +34,7 @@ MonoBehaviour:
     rewardfor1Star: 0
     rewardfor2Star: 0
     rewardfor3Star: 0
+  waves:
+  - Turretformation: 000000000200000000000000000000000100000000000000000000000300000000000000
+  - Turretformation: 
+  - Turretformation: 

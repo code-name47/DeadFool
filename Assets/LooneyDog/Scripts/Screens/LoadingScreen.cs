@@ -26,13 +26,13 @@ namespace LooneyDog
 
         IEnumerator WaitTimeBeforeLoad()
         {
-            yield return new WaitForSeconds(_waitTimeBeforeLoad);
+            yield return new WaitForSecondsRealtime(_waitTimeBeforeLoad);
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneIndexToBeLoaded, LoadSceneMode.Single);
             while (!asyncLoad.isDone)
             {
                 yield return null;
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSecondsRealtime(2f);
             LoadLevel();
         }
 

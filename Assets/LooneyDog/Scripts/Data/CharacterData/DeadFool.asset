@@ -15,7 +15,8 @@ MonoBehaviour:
   _characterId: 0
   _gunPower: 20.7
   _katanaDamage: 21.2
-  _health: 21.3
+  _health: 100
   _armor: 11.1
+  _heathRecoverRate: 5
   _owned: 1
-  _selected: 1
+  _selected: 0

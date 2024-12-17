@@ -7,11 +7,13 @@ namespace LooneyDog
 
     public class InGameUiController : MonoBehaviour
     {
-        [SerializeField] private float _sprite;
+        [SerializeField] private Image _healthMeter;
 
         private void Update()
         {
             transform.LookAt(Camera.main.transform);
         }
+
+       
     }
 }

@@ -536,7 +536,7 @@ public TopMenu Top { get { return _topMenu; } set { _topMenu = value; } }*/
 
         public IEnumerator ActivateAllButtons(Button[] buttons, float activationTime)
         {
-            yield return new WaitForSeconds(activationTime);
+            yield return new WaitForSecondsRealtime(activationTime);
 
             for (int i = 0; i < buttons.Length; i++)
             {

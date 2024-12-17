@@ -9,8 +9,9 @@ namespace LooneyDog
         [SerializeField] private CharacterId _characterId;
         [SerializeField] [Range(0,100f)] private float _gunPower;
         [SerializeField] [Range(0, 100f)] private float _katanaDamage;
-        [SerializeField] [Range(0, 100f)] private float _health;
+        [SerializeField] [Range(0, 1000f)] private float _health;
         [SerializeField] [Range(0, 100f)] private float _armor;
+        [SerializeField] [Range(0, 100f)] private float _heathRecoverRate;
         [SerializeField] private bool _owned, _selected;
 
         public CharacterId CharacterId { get => _characterId; set => _characterId = value; }
@@ -20,5 +21,6 @@ namespace LooneyDog
         public float Armor { get => _armor; set => _armor = value; }
         public bool Owned { get => _owned; set => _owned = value; }
         public bool Selected { get => _selected; set => _selected = value; }
+        public float HeathRecoverRate { get => _heathRecoverRate; set => _heathRecoverRate = value; }
     }
 }

@@ -9,6 +9,7 @@ namespace LooneyDog
         [SerializeField] private float _gunDamage;
         [SerializeField] private Transform _bulletSpwanPoint,_bulletShellSpwanPoint;
         [SerializeField] private GameObject _bullet, _bulletMuzzle;
+        [SerializeField] private BulletController _bulletController;
         [SerializeField] private ParticleSystem _bulletShell;
         [SerializeField] private Animator _gunAnimator;
         [SerializeField] private Transform _parentTransform;
@@ -21,7 +22,8 @@ namespace LooneyDog
             //Instantiate(_bulletMuzzle, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_bulletSpwanPoint.transform.forward));
             //Instantiate(_bullet, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_bulletSpwanPoint.transform.forward));
             Instantiate(_bulletMuzzle, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_parentTransform.forward));
-            Instantiate(_bullet, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_parentTransform.forward));
+            _bulletController.BulletDamage = _gunDamage;
+            Instantiate(_bulletController, _bulletSpwanPoint.transform.position, Quaternion.LookRotation(_parentTransform.forward));
             _bulletShell.Play();
         }
     }
