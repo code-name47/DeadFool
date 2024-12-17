@@ -82,7 +82,7 @@ Material:
     - _Metallic: 0.543
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineSize: 45.48
+    - _OutlineSize: 0
     - _Parallax: 0.02
     - _RampLevels: 2
     - _RimAlpha: 0
@@ -94,11 +94,11 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9811321, g: 0.895787, b: 0.022214282, a: 1}
+    - _Color: {r: 0, g: 0.8587775, b: 1, a: 1}
     - _EmissionColor: {r: 0.4862745, g: 0.4019608, b: 0, a: 0}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighColor: {r: 1, g: 1, b: 1, a: 1}
     - _LowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -33,6 +33,8 @@ namespace LooneyDog
         private void OnEnable()
         {
             GameManager.Game.Sound.PlayMusic(MusicClipId.Action);
+            GameManager.Game.Screen.OpenPopUpScreen(GameManager.Game.Screen.Top.transform, ScreenLocation.up, _transitionSpeed);
+            GameManager.Game.Screen.Top.UpdateTopPanel();
         }
         public void OnCLickStartButton() {
             GameManager.Game.Screen.Load.LoadLevel(2,GameDifficulty.Easy,gameObject);

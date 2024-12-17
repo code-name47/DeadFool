@@ -8,12 +8,13 @@ namespace LooneyDog
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Vector2 _playerDirection;
-        [SerializeField] private float _playerSpeed,_playerRotationSpeed;
+        [SerializeField] private float _playerSpeed,_playerRotationSpeed,_playerHealth,_playerTotalHealth;
+        [SerializeField] private float _playerRecoverRate;
         [SerializeField] private Animator _playerAnimator;
-        [SerializeField] private float _hitDelay, _smallHitDelay, _hitMoveDistance;
+        [SerializeField] private float _hitDelay, _smallHitDelay, _hitMoveDistance,_deadScreenDelay,_reviveDelay;
         [SerializeField] private BoxCollider _playerCollider;
         [SerializeField] private DialogueController _dialogueController;
-        private bool _isGettingHit = false;
+        private bool _isGettingHit = false, _isPlayerDead = false;
         [SerializeField] private bool _iswieldedKatana=false,_isdeflecting=false,_isWeildingGun;
         [SerializeField] private KatanaController _katana;
         [SerializeField] private GunController _gunLeft,_gunRight;
@@ -26,13 +27,33 @@ namespace LooneyDog
         private void OnEnable()
         {
             GameManager.Game.Level.CurrentPlayerController = this;
+
+            GetPlayerData();
         }
 
+        public void GetPlayerData() {
+            _isPlayerDead = false;
+            CharacterData ActiveCharacter = GameManager.Game.Skin.CharacterObject[(int)GameManager.Game.Skin.CurrentActiveCharacter];
+            _playerTotalHealth = ActiveCharacter.Health;
+            _playerRecoverRate = ActiveCharacter.HeathRecoverRate;
+            _playerHealth = _playerTotalHealth;
+        }
+
+        public void RecoverHealth() {
+            if (_playerHealth< _playerTotalHealth) {
+                _playerHealth += (_playerRecoverRate / 100f) * Time.deltaTime;
+                GameManager.Game.Screen.GameScreen.SetHealth(_playerHealth/_playerTotalHealth);
+            }
+        }
         private void FixedUpdate()
         {
+            RecoverHealth();
             if (!_isGettingHit)
             {
-                MovePlayer();
+                if (!_isPlayerDead)
+                {
+                    MovePlayer();
+                }
             }
            /* else {
                 transform.position = Vector3.Lerp(transform.position, transform.position + transform.forward*_hitMoveDistance, _hitDelay*Time.deltaTime); 
@@ -76,6 +97,29 @@ namespace LooneyDog
             StartCoroutine(WaitTillHit(_smallHitDelay));
         }
 
+        public void ReduceHeath(float Damage) {
+            
+            _playerHealth -= Damage;
+            if (_playerHealth <= 0) {
+                PlayerDieing();
+            }
+            Debug.Log(" Damage done by bullet is :" +Damage);
+            GameManager.Game.Screen.GameScreen.SetHealth(_playerHealth / _playerTotalHealth); //Normalizeing
+        }
+
+        public void PlayerDieing() {
+            _isPlayerDead = true;
+            _playerAnimator.SetBool("Dead", _isPlayerDead);
+            SetUnArmed();
+
+            StartCoroutine(WaitForScreen());
+        }
+
+        public void PlayerRevived() {
+            _playerAnimator.SetBool("Dead", false);
+            StartCoroutine(WaitForRevive());
+        }
+
         public void OnFireLeft() {
             GunLeft.GunAnimator.SetTrigger("Fire");
         }
@@ -96,6 +140,18 @@ namespace LooneyDog
             _isdeflecting = false;
         }
 
+        IEnumerator WaitForScreen() {
+            yield return new WaitForSeconds(_deadScreenDelay);
+            GameManager.Game.Screen.GameScreen.CallGameOverScreen();
+        }
+
+        IEnumerator WaitForRevive()
+        {
+            yield return new WaitForSeconds(_reviveDelay);
+            _isPlayerDead = false;
+            _playerHealth = _playerTotalHealth;
+        }
+
         private void MovePlayer()
         {
             if (_playerDirection != Vector2.zero)
@@ -108,8 +164,43 @@ namespace LooneyDog
                 Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _playerRotationSpeed); // Smooth rotation
             }
-
         }
+
+        public void SetKatanaWeilder() {
+            _iswieldedKatana = true;
+            _isWeildingGun = false;
+            _playerAnimator.SetBool("Katana", true);
+            _playerAnimator.SetBool("Pistol", false);
+            _playerAnimator.SetTrigger("Roll");
+            _playerAnimator.SetLayerWeight(1, 0);
+            _katana.gameObject.SetActive(true);
+            _gunLeft.gameObject.SetActive(false);
+        }
+
+        public void SetPistolWeilder()
+        {
+            _iswieldedKatana = false;
+            _isWeildingGun = true;
+            _playerAnimator.SetBool("Katana", false);
+            _playerAnimator.SetBool("Pistol", true);
+            _playerAnimator.SetTrigger("Roll");
+            _playerAnimator.SetLayerWeight(1, 1);
+            _katana.gameObject.SetActive(false);
+            _gunLeft.gameObject.SetActive(true);
+        }
+
+        public void SetUnArmed()
+        {
+            _iswieldedKatana = false;
+            _isWeildingGun = false;
+            _playerAnimator.SetBool("Katana", false);
+            _playerAnimator.SetBool("Pistol", false);
+            //_playerAnimator.SetTrigger("Roll");
+            _playerAnimator.SetLayerWeight(1, 0);
+            _katana.gameObject.SetActive(false);
+            _gunLeft.gameObject.SetActive(false);
+        }
+
     }
  
 }

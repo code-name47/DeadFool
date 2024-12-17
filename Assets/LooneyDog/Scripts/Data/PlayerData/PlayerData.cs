@@ -13,11 +13,13 @@ namespace LooneyDog
 
         public List<ShipData> ShipData { get => SHIPDATA; set => SHIPDATA = value; }
         public ShiPId CurrentShipId { get => CURRENTSHIPID; set => CURRENTSHIPID = value; }
+        public int Duckpoint { get => DUCKPOINTS; set => DUCKPOINTS = value; }
 
         [SerializeField] private int HIGHSCORE;
         [SerializeField] private float CAMERASENSITIVITY = 0.5f;
         [SerializeField] private bool SHOWTUTORIAL = true;
         [SerializeField] private int COINS;
+        [SerializeField] private int DUCKPOINTS;
 
         [SerializeField] List<ShipData> SHIPDATA = new List<ShipData>();
         [SerializeField] ShiPId CURRENTSHIPID;
@@ -39,6 +41,7 @@ namespace LooneyDog
             //dataTester();
         }
         
+
 
         private void dataTester() {
             for (int i = 0; i < GameManager.Game.Skin.ShipSkins.Length; i++) {
@@ -125,7 +128,14 @@ namespace LooneyDog
         {
             CAMERASENSITIVITY = value / 100;
         }
-        
+
+        public void AddDuckPoints(int DuckPoints) {
+            DUCKPOINTS += DuckPoints;
+        }
+
+        public int UpdateDuckPoints() {
+            return DUCKPOINTS;
+        }
 
     }
 

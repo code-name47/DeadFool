@@ -18930,6 +18930,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300826995}
     m_Modifications:
+    - target: {fileID: 1641648050355060712, guid: 38bfe291e24603f4eaefb505da395f81, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3885348026595947113, guid: 38bfe291e24603f4eaefb505da395f81, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -18979,6 +18983,10 @@ PrefabInstance:
       value: DeadFool_BlackAndWhite
       objectReference: {fileID: 0}
     - target: {fileID: 4512703434410191059, guid: 38bfe291e24603f4eaefb505da395f81, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926839476701904464, guid: 38bfe291e24603f4eaefb505da395f81, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

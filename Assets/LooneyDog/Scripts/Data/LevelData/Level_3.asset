@@ -34,3 +34,7 @@ MonoBehaviour:
     rewardfor1Star: 0
     rewardfor2Star: 0
     rewardfor3Star: 0
+  waves:
+  - Turretformation: 
+  - Turretformation: 
+  - Turretformation: 
