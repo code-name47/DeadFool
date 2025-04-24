@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Pressed",
+                    "type": "Value",
+                    "id": "f67c05d9-5c7c-4614-846d-b77e7657eef6",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -24,6 +33,17 @@
                     "processors": "StickDeadzone",
                     "groups": "",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eaa67faf-0799-4379-b429-560818dc134b",
+                    "path": "<AndroidJoystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pressed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

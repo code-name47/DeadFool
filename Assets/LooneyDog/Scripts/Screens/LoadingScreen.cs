@@ -38,15 +38,23 @@ namespace LooneyDog
 
         private void LoadLevel()
         {
-            if (_sceneIndexToBeLoaded > 1)
+            if (_sceneIndexToBeLoaded >2)
             {
                 GameManager.Game.Screen.LoadFadeScreen(GameManager.Game.Screen.Load.gameObject, GameManager.Game.Screen.GameScreen.gameObject);
                 GameManager.Game.Level.SetCurrentLevelDetails(SceneIndexToBeLoaded, _difficultySet);
                 GameManager.Game.Level.GetLevelData(SceneIndexToBeLoaded, _difficultySet);
             }
-            else
+            else if (_sceneIndexToBeLoaded == 2)
+            {
+                GameManager.Game.Screen.LoadFadeScreen(GameManager.Game.Screen.Load.gameObject, GameManager.Game.Screen.LevelScreen.gameObject);
+            }
+            else if (_sceneIndexToBeLoaded == 1)
             {
                 GameManager.Game.Screen.LoadFadeScreen(GameManager.Game.Screen.Load.gameObject, GameManager.Game.Screen.Home.gameObject);
+            }
+            else if (_sceneIndexToBeLoaded == 0)
+            {
+                GameManager.Game.Screen.LoadFadeScreen(GameManager.Game.Screen.Load.gameObject, GameManager.Game.Screen.Splsh.gameObject);
             }
         }
         public void SetSceneIndexAndDifficulty(int sceneindex, GameDifficulty gameDifficulty)

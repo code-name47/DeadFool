@@ -1,0 +1,664 @@
+fileFormatVersion: 2
+guid: c54da6448a7742849b2b6f5029accf4c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 867
+        width: 171
+        height: 157
+      alignment: 9
+      pivot: {x: 0.4482769, y: 0.4999996}
+      border: {x: 50, y: 50, z: 70, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da454d6b09c97ae4ebe6d61d4778a711
+      internalID: 606581259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 867
+        width: 171
+        height: 157
+      alignment: 9
+      pivot: {x: 0.46896613, y: 0.4999996}
+      border: {x: 50, y: 50, z: 50, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e186fa4408282574d991fff837b35cc9
+      internalID: -1410002876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_2
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 867
+        width: 171
+        height: 157
+      alignment: 9
+      pivot: {x: 0.4896549, y: 0.4999996}
+      border: {x: 50, y: 50, z: 50, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f728c64cefd603f4a95e9a83ce7b1cd0
+      internalID: 1293237371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_3
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 867
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 50, y: 50, z: 50, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cc3d97ce28e6942ad45d915a5105e8
+      internalID: 1928185364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_4
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 867
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b756e0435204044a0c573d13106267
+      internalID: 1856700130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 171
+        height: 162
+      alignment: 9
+      pivot: {x: 0.4793108, y: 0.5105711}
+      border: {x: 50, y: 50, z: 60, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd2fc6729375d443bbbce4e330d3b38
+      internalID: -1533804379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_6
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 710
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd54583c52537d54292e4c38bb617a64
+      internalID: 1801292544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_7
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 710
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64778ed548730474b9704f596e5fd062
+      internalID: -1323123933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_8
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 710
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 50, y: 50, z: 50, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f609e57776839294ab7a733055d313d3
+      internalID: -2072851421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_9
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 710
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f70ebbb46536704faf6873bb7f0785d
+      internalID: -1165370088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 553
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7492ea7a1c94d8446936e41ccfcbcf9c
+      internalID: 1708059464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_11
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 553
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c383432bc11bc04ca0de631f5c9fac7
+      internalID: 1856974488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_12
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 553
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3722c7dafb3168244b56a9f9ed961f3f
+      internalID: 789584530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_13
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 553
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 50, y: 50, z: 50, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8dbd29c9f629740a2408e7477dbc46
+      internalID: -683161638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_14
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 396
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6630fda1e9999a4c91173be9fa1c534
+      internalID: 1355566199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_15
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 396
+        width: 171
+        height: 157
+      alignment: 9
+      pivot: {x: 0.49999964, y: 0.5563353}
+      border: {x: 50, y: 61, z: 50, w: 36}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a603f0f2abb3a442a758417355aa221
+      internalID: -506568053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_16
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 396
+        width: 171
+        height: 157
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5563353}
+      border: {x: 50, y: 56, z: 50, w: 43}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63aa32accdbea9429bed2244d94e8c5
+      internalID: -878384251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_17
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 396
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b359fabd8da4abf428a2ecfd2ef6d3c9
+      internalID: -1945198009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_18
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 239
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4c81bf603c705489c56654711cb46c
+      internalID: 1898289522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_19
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 239
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2271c6580a739284eab654a6fe779e22
+      internalID: -608660957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_20
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 239
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb62e056e6982d4f841b5d0c8fc48a8
+      internalID: -254685545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_21
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 82
+        width: 171
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc216269f6a4a924694c1b2c35c468bd
+      internalID: 936331102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comic_Ui_TransparentBg2.png_22
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 98
+        width: 171
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 50, y: 50, z: 50, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce7a7fbed77d04478e3e4ab0bd82bc0
+      internalID: 267991788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d8d3f926898677a4a84a643a3ea8bf75
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Comic_Ui_TransparentBg2.png_11: 1856974488
+      Comic_Ui_TransparentBg2.png_1: -1410002876
+      Comic_Ui_TransparentBg2.png_9: -1165370088
+      Comic_Ui_TransparentBg2.png_21: 936331102
+      Comic_Ui_TransparentBg2.png_5: -1533804379
+      Comic_Ui_TransparentBg2.png_12: 789584530
+      Comic_Ui_TransparentBg2.png_0: 606581259
+      Comic_Ui_TransparentBg2.png_2: 1293237371
+      Comic_Ui_TransparentBg2.png_10: 1708059464
+      Comic_Ui_TransparentBg2.png_7: -1323123933
+      Comic_Ui_TransparentBg2.png_4: 1856700130
+      Comic_Ui_TransparentBg2.png_17: -1945198009
+      Comic_Ui_TransparentBg2.png_19: -608660957
+      Comic_Ui_TransparentBg2.png_20: -254685545
+      Comic_Ui_TransparentBg2.png_14: 1355566199
+      Comic_Ui_TransparentBg2.png_15: -506568053
+      Comic_Ui_TransparentBg2.png_13: -683161638
+      Comic_Ui_TransparentBg2.png_3: 1928185364
+      Comic_Ui_TransparentBg2.png_22: 267991788
+      Comic_Ui_TransparentBg2.png_18: 1898289522
+      Comic_Ui_TransparentBg2.png_16: -878384251
+      Comic_Ui_TransparentBg2.png_6: 1801292544
+      Comic_Ui_TransparentBg2.png_8: -2072851421
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

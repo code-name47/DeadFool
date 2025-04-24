@@ -7,28 +7,42 @@ namespace LooneyDog
 
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private Vector2 _playerDirection;
+        [SerializeField] private Vector2 _playerDirection,_lastKnownPlayerDirection=Vector2.zero;
         [SerializeField] private float _playerSpeed,_playerRotationSpeed,_playerHealth,_playerTotalHealth;
         [SerializeField] private float _playerRecoverRate;
         [SerializeField] private Animator _playerAnimator;
-        [SerializeField] private float _hitDelay, _smallHitDelay, _hitMoveDistance,_deadScreenDelay,_reviveDelay;
+        [SerializeField] private float _hitDelay, _smallHitDelay, _hitMoveDistance,_deadScreenDelay,_reviveDelay,_stoppingDelay,_stoppingDistance;
         [SerializeField] private BoxCollider _playerCollider;
         [SerializeField] private DialogueController _dialogueController;
         private bool _isGettingHit = false, _isPlayerDead = false;
         [SerializeField] private bool _iswieldedKatana=false,_isdeflecting=false,_isWeildingGun;
         [SerializeField] private KatanaController _katana;
         [SerializeField] private GunController _gunLeft,_gunRight;
+        [SerializeField] private Vector3 currentVelocity=Vector3.zero;
+        [SerializeField] private Rigidbody _rigidbody;
+
+        [Header("ActionPerformers")]
+        [SerializeField] private ObjectActionController _actionPerformee;
+        [SerializeField] private Transform _actionPerformerPosition;
+        [SerializeField] private bool _performingAction, _playerImmortal = false,_snapToPosition=false;
+        [SerializeField] private float _actionTime;
+        [SerializeField] private ActionID _actionId;
+
+        [Header("CharacterTrails")]
+        [SerializeField] private ParticleSystem _cloudDustTrail;
 
         public bool IswieldedKatana { get => _iswieldedKatana; set => _iswieldedKatana = value; }
         public GunController GunLeft { get => _gunLeft; set => _gunLeft = value; }
         public KatanaController Katana { get => _katana; set => _katana = value; }
         public Animator PlayerAnimator { get => _playerAnimator; set => _playerAnimator = value; }
+        public ObjectActionController ActionPerformee { get => _actionPerformee; set => _actionPerformee = value; }
 
         private void OnEnable()
         {
             GameManager.Game.Level.CurrentPlayerController = this;
 
             GetPlayerData();
+
         }
 
         public void GetPlayerData() {
@@ -37,6 +51,7 @@ namespace LooneyDog
             _playerTotalHealth = ActiveCharacter.Health;
             _playerRecoverRate = ActiveCharacter.HeathRecoverRate;
             _playerHealth = _playerTotalHealth;
+            SetUnArmed();//Player Arm status
         }
 
         public void RecoverHealth() {
@@ -45,20 +60,89 @@ namespace LooneyDog
                 GameManager.Game.Screen.GameScreen.SetHealth(_playerHealth/_playerTotalHealth);
             }
         }
-        private void FixedUpdate()
+        private void Update()
         {
+            _rigidbody.velocity = Vector3.zero;
             RecoverHealth();
             if (!_isGettingHit)
             {
                 if (!_isPlayerDead)
                 {
-                    MovePlayer();
+                    if (_performingAction)
+                    {
+                        PerformAction();
+                    }
+                    else
+                    {
+                        MovePlayer();
+                    }
                 }
             }
-           /* else {
-                transform.position = Vector3.Lerp(transform.position, transform.position + transform.forward*_hitMoveDistance, _hitDelay*Time.deltaTime); 
-            }*/
+            TimeSlow();
+            
         }
+      
+        //---------------------------------   Perform Action ------------------------------------------
+        public void SetNearbyActionObject(ObjectActionController actionperformee,ActionID actionid,Transform Object,float duration) {
+            ActionPerformee = actionperformee;
+            _actionId = actionid;
+            _actionPerformerPosition = Object;
+            _actionTime = duration;
+        }
+     
+        public void PerformAction() {
+            
+            if (!_snapToPosition)
+            {
+                if (_playerAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Stop")
+                {
+                    AnimateAction(_actionId);
+                    AlignToTarget(_actionPerformerPosition, _actionTime);
+                }
+            }
+        }
+
+        private void AnimateAction(ActionID actionID) {
+            _playerAnimator.SetTrigger("" + actionID);
+        }
+
+        public void AlignToTarget(Transform target, float duration)
+        {
+            _snapToPosition = true;
+            StartCoroutine(AlignToPositionAndRotation(target, duration));
+        }
+
+        private IEnumerator AlignToPositionAndRotation(Transform target, float duration)
+        {
+            Vector3 startPos = transform.position;
+            Quaternion startRot = transform.rotation;
+            Vector3 endPos = target.position;
+            Quaternion endRot = target.rotation;
+
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                float t = elapsed / duration;
+                transform.position = Vector3.Lerp(startPos, endPos, t);
+                transform.rotation = Quaternion.Slerp(startRot, endRot, t);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            
+            // Snap to final transform
+            transform.position = endPos;
+            transform.rotation = endRot;
+            //AnimateAction(_actionId);
+            _snapToPosition = false;
+        }
+
+        //------------------------------------------  End Action  -----------------------------------
+
+
+
+        //------------------------------------------ Character Movement -----------------------------
 
         public void OnMove(InputValue input)
         {
@@ -66,6 +150,31 @@ namespace LooneyDog
             PlayerAnimator.SetFloat("Moving", _playerDirection.magnitude);
         }
 
+        private void MovePlayer()
+        {
+
+            if (_playerDirection != Vector2.zero)
+            {
+                Vector3 moveDirection = new Vector3(_playerDirection.x, 0, _playerDirection.y).normalized;
+                currentVelocity = moveDirection * (_playerSpeed * _playerDirection.magnitude) * Time.deltaTime;
+                Vector3 newPosition = transform.localPosition + currentVelocity;
+                transform.localPosition = new Vector3(newPosition.x, transform.localPosition.y, newPosition.z);
+
+                // Rotate to look where it's moving
+                Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _playerRotationSpeed); // Smooth rotation
+                ActivateCharacterTrail();
+            }
+            else
+            {
+                DeActivateCharacterTrail();
+            }
+        }
+
+        //------------------------------------------End Character Movement -----------------------------
+
+
+        //------------------------------------------Character getting Hit ------------------------------
         public void GettingHit() {
             PlayerAnimator.SetTrigger("GettingHit");
             //_dialogueController.CallDialogue(DialogId.Ouch);
@@ -76,37 +185,61 @@ namespace LooneyDog
         }
         public void GettingSmallHit()
         {
-            if (_isWeildingGun) {
-                PlayerAnimator.SetLayerWeight(1, 0);
-            }
+            if (!_playerImmortal)
+            {
+                if (_isWeildingGun)
+                {
+                    PlayerAnimator.SetLayerWeight(1, 0);
+                }
 
-            if (!_isdeflecting)
-            {
-                _isdeflecting = true;
-                PlayerAnimator.SetTrigger("GettingSmallHit");
-                //_dialogueController.CallDialogue(DialogId.Ouch);
-                _dialogueController.CallGettingHitDialogue();
+                if (!_isdeflecting)
+                {
+                    _isdeflecting = true;
+                    PlayerAnimator.SetTrigger("GettingSmallHit");
+                    //_dialogueController.CallDialogue(DialogId.Ouch);
+                    _dialogueController.CallGettingHitDialogue();
+                }
+
+                if (!_iswieldedKatana)
+                {
+                    //Debug.Log("katanaHit Called");
+                    _playerCollider.enabled = false;
+                    _isGettingHit = true;
+                }
+                StartCoroutine(WaitTillHit(_smallHitDelay));
             }
-            
-            if (!_iswieldedKatana)
-            {
-                Debug.Log("katanaHit Called");
-                _playerCollider.enabled = false;
-                _isGettingHit = true;
-            }
-            StartCoroutine(WaitTillHit(_smallHitDelay));
         }
 
         public void ReduceHeath(float Damage) {
-            
-            _playerHealth -= Damage;
-            if (_playerHealth <= 0) {
-                PlayerDieing();
+            if (!_playerImmortal)
+            {
+                _playerHealth -= Damage;
+                if (_playerHealth <= 0)
+                {
+                    PlayerDieing();
+                }
+                Debug.Log(" Damage done by bullet is :" + Damage);
+                GameManager.Game.Screen.GameScreen.SetHealth(_playerHealth / _playerTotalHealth); //Normalizeing
             }
-            Debug.Log(" Damage done by bullet is :" +Damage);
-            GameManager.Game.Screen.GameScreen.SetHealth(_playerHealth / _playerTotalHealth); //Normalizeing
         }
 
+        IEnumerator WaitTillHit(float hitDelay)
+        {
+            yield return new WaitForSeconds(hitDelay);
+            if (_isWeildingGun)
+            {
+                PlayerAnimator.SetLayerWeight(1, 1);
+            }
+
+            _isGettingHit = false;
+            _playerCollider.enabled = true;
+            _isdeflecting = false;
+        }
+
+
+        //------------------------------------------End Character getting Hit ------------------------------
+
+        //------------------------------------------ Player Dieing ---------------------------------------
         public void PlayerDieing() {
             _isPlayerDead = true;
             _playerAnimator.SetBool("Dead", _isPlayerDead);
@@ -120,27 +253,9 @@ namespace LooneyDog
             StartCoroutine(WaitForRevive());
         }
 
-        public void OnFireLeft() {
-            GunLeft.GunAnimator.SetTrigger("Fire");
-        }
-        public void OnFireRight()
+
+        IEnumerator WaitForScreen()
         {
-            _gunRight.GunAnimator.SetTrigger("Fire");
-        }
-
-        IEnumerator WaitTillHit(float hitDelay) {
-            yield return new WaitForSeconds(hitDelay);
-            if (_isWeildingGun)
-            {
-                PlayerAnimator.SetLayerWeight(1, 1);
-            }
-
-            _isGettingHit = false;
-            _playerCollider.enabled = true;
-            _isdeflecting = false;
-        }
-
-        IEnumerator WaitForScreen() {
             yield return new WaitForSeconds(_deadScreenDelay);
             GameManager.Game.Screen.GameScreen.CallGameOverScreen();
         }
@@ -152,19 +267,63 @@ namespace LooneyDog
             _playerHealth = _playerTotalHealth;
         }
 
-        private void MovePlayer()
+        //------------------------------------------End Player Dieing ---------------------------------------
+
+        //------------------------------------------Character Fire ----------------------------------------
+        public void OnFireLeft() {
+            GunLeft.GunAnimator.SetTrigger("Fire");
+        }
+        public void OnFireRight()
         {
+            _gunRight.GunAnimator.SetTrigger("Fire");
+        }
+
+        //------------------------------------------End Character Fire ---------------------------------
+
+        //------------------------------------------ Character Trails ----------------------------------
+        private void ActivateCharacterTrail() {
+            _cloudDustTrail.gameObject.SetActive(true);
+        }
+
+        private void DeActivateCharacterTrail() {
+            _cloudDustTrail.gameObject.SetActive(true);
+        }
+
+
+
+        //------------------------------------------ End Of Character Trails ---------------------------
+        //------------------------------------------Time Slow -------------------------------
+        private void TimeSlow() {
             if (_playerDirection != Vector2.zero)
             {
-                Vector3 moveDirection = new Vector3(_playerDirection.x, 0, _playerDirection.y).normalized;
-                Vector3 newPosition = transform.localPosition + moveDirection * (_playerSpeed*_playerDirection.magnitude) * Time.deltaTime;
-                transform.localPosition = new Vector3(newPosition.x, transform.localPosition.y, newPosition.z);
-
-                // Rotate to look where it's moving
-                Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _playerRotationSpeed); // Smooth rotation
+                GameManager.Game.Screen.GameScreen.SlowPanelUnFade();
+            }
+            else
+            {
+                GameManager.Game.Screen.GameScreen.SlowPanelFade();
             }
         }
+
+        //------------------------------------------End Of Time Slow ---------------------------
+
+        //------------------------------------------Set Animation States ----------------------
+        public void setPerformingAction(bool isperforming) {
+            _performingAction = isperforming;
+        }
+
+        public void ResetPerformPositionSnap() {
+            _snapToPosition = false;
+        }
+
+        public void setPlayerImmortal() {
+            _playerImmortal = true;
+        }
+
+        public void setPlayerMortal() {
+            _playerImmortal = false;
+        }
+        //----------------------------------------- End of Animaiton states --------------------------
+        //-----------------------------------   Set character States ---------------------------------
 
         public void SetKatanaWeilder() {
             _iswieldedKatana = true;
@@ -200,7 +359,7 @@ namespace LooneyDog
             _katana.gameObject.SetActive(false);
             _gunLeft.gameObject.SetActive(false);
         }
-
+        //----------------------------------- End Of Set character States ---------------------------------
     }
- 
+
 }

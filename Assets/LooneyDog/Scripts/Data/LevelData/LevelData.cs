@@ -13,10 +13,16 @@ namespace LooneyDog
 
         public int StarsObtained { get { return _starsObtained; } set { _starsObtained = value; } }
 
+        public string LevelTitle { get => _levelTitle; set => _levelTitle = value; }
+        public string LevelStory { get => _levelStory; set => _levelStory = value; }
+
         [SerializeField] private int _levelNumber;
         [SerializeField] private bool _levelCompleted;
+        [SerializeField] private bool _levelLocked;
         [SerializeField] private int _starsObtained;
-       
+        [SerializeField] private String _levelTitle;
+        [SerializeField][TextArea(5,10)] private String _levelStory;
+
 
 
         public LevelDataStruct[] datas = new LevelDataStruct[3];
@@ -55,7 +61,20 @@ namespace LooneyDog
     [Serializable]
     public struct WaveDataStruct
     {
+        [Header("WaveName")]
+        [SerializeField] public String waveName;
+        [Header("Turret")]
         [SerializeField] public TurretType[] Turretformation;
+        [SerializeField] public TurretBaseRotation[] baseRotation;
+        [SerializeField] public TurretHeadRotation[] turretHeadRotation;
+        [Header("Missile")]
+        [SerializeField] public float[] missileDelays;
+        [SerializeField] public MissileType[] missileType;
+        [SerializeField] public int[] missilePosition;  
+        [Header("Timer(Seconds)")]
+        [SerializeField] public float WaveTime;
+/*        [Header("Missile")]
+        [SerializeField] public*/
     }
 
 }

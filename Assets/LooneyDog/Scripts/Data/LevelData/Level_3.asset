@@ -15,6 +15,8 @@ MonoBehaviour:
   _levelNumber: 3
   _levelCompleted: 0
   _starsObtained: 0
+  _levelTitle: xxcxcvxcv
+  _levelStory: alkfdfloooo
   datas:
   - timeRequriedFor_1Star: 0
     timeRequriedFor_2Star: 0
@@ -35,6 +37,27 @@ MonoBehaviour:
     rewardfor2Star: 0
     rewardfor3Star: 0
   waves:
-  - Turretformation: 
-  - Turretformation: 
-  - Turretformation: 
+  - waveName: 
+    Turretformation: 
+    baseRotation: 
+    turretHeadRotation: 
+    missileDelays: []
+    missileType: 
+    missilePosition: 
+    WaveTime: 0
+  - waveName: 
+    Turretformation: 
+    baseRotation: 
+    turretHeadRotation: 
+    missileDelays: []
+    missileType: 
+    missilePosition: 
+    WaveTime: 0
+  - waveName: 
+    Turretformation: 
+    baseRotation: 
+    turretHeadRotation: 
+    missileDelays: []
+    missileType: 
+    missilePosition: 
+    WaveTime: 0

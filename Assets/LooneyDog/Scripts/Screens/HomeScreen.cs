@@ -36,8 +36,13 @@ namespace LooneyDog
             GameManager.Game.Screen.OpenPopUpScreen(GameManager.Game.Screen.Top.transform, ScreenLocation.up, _transitionSpeed);
             GameManager.Game.Screen.Top.UpdateTopPanel();
         }
+        private void OnDisable()
+        {
+            GameManager.Game.Screen.ClosePopUpScreen(GameManager.Game.Screen.Top.transform, ScreenLocation.up, _transitionSpeed);
+        }
+
         public void OnCLickStartButton() {
-            GameManager.Game.Screen.Load.LoadLevel(2,GameDifficulty.Easy,gameObject);
+            GameManager.Game.Screen.Load.LoadLevel(3,GameDifficulty.Easy,gameObject);
             GameManager.Game.Sound.PlayUisound(UiClipId.Click);
 
             /*GameManager.Game.Screen.LoadFadeScreen(this.gameObject, GameManager.Game.Screen.Load.gameObject);*/

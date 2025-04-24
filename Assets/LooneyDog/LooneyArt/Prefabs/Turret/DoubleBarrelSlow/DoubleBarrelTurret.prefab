@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 850605538463286874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpwanRightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 850605539068737820}
   - component: {fileID: 850605539068737819}
   - component: {fileID: 850605539068737818}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DoubleBarrelTurret
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -118,6 +118,8 @@ MonoBehaviour:
   _bulletMuzzle: {fileID: 1000012903210382, guid: 1573fd3afb4529349ac86a3fdf5857c5, type: 3}
   _bulletController: {fileID: 1817997550144747819, guid: b141babee1b0a934084cc1e7b311d991, type: 3}
   _enemyBodyController: {fileID: 850605539068737818}
+  _turretBaseRotation: 0
+  _turretHeadRotation: 0
 --- !u!65 &850605539068737820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 850605539717275672}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpwanLeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +211,7 @@ GameObject:
   - component: {fileID: 850605539775838975}
   - component: {fileID: 850605539775838973}
   - component: {fileID: 850605539775838974}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +287,7 @@ GameObject:
   - component: {fileID: 850605540048910210}
   - component: {fileID: 850605540048910208}
   - component: {fileID: 850605540048910209}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBarBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +366,7 @@ GameObject:
   - component: {fileID: 850605540400312624}
   - component: {fileID: 850605540400312625}
   - component: {fileID: 850605540400312626}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1913903563358663210}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpwanLeftPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +511,7 @@ GameObject:
   - component: {fileID: 3188725191533018464}
   - component: {fileID: 293227561561264033}
   - component: {fileID: 7385384806965740630}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TurretHead (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,7 +632,7 @@ GameObject:
   - component: {fileID: 7577048750322154786}
   - component: {fileID: 3153712030108179030}
   - component: {fileID: 2149893053987427635}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BrokenTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2139410324257951332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpwanRightPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +792,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582544848255984520}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpwanLeftPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 519940729792307291}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpwanRightPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,6 +896,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8061869827109355529, guid: 5467f18019208204b8cf8a18e697b018, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -5004074729439815274, guid: 5467f18019208204b8cf8a18e697b018, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.0017795265
@@ -925,6 +931,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5467f18019208204b8cf8a18e697b018, type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5467f18019208204b8cf8a18e697b018, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5467f18019208204b8cf8a18e697b018, type: 3}
       propertyPath: m_IsActive
@@ -993,6 +1003,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 850605539068737822}
     m_Modifications:
+    - target: {fileID: -8797524296894757330, guid: b86271f9892738c4aa575c446256ae73, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b86271f9892738c4aa575c446256ae73, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1065,6 +1079,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.008118056
       objectReference: {fileID: 0}
+    - target: {fileID: -8061869827109355529, guid: b86271f9892738c4aa575c446256ae73, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -7877813135231906004, guid: b86271f9892738c4aa575c446256ae73, type: 3}
       propertyPath: m_DirtyAABB
       value: 0
@@ -1092,6 +1110,18 @@ PrefabInstance:
     - target: {fileID: -7877813135231906004, guid: b86271f9892738c4aa575c446256ae73, type: 3}
       propertyPath: m_AABB.m_Extent.z
       value: 0.0045975205
+      objectReference: {fileID: 0}
+    - target: {fileID: -7857240078513254559, guid: b86271f9892738c4aa575c446256ae73, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7320646430389671710, guid: b86271f9892738c4aa575c446256ae73, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6243375860033319369, guid: b86271f9892738c4aa575c446256ae73, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -5447757667986828751, guid: b86271f9892738c4aa575c446256ae73, type: 3}
       propertyPath: m_DirtyAABB
@@ -1121,6 +1151,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.0055764643
       objectReference: {fileID: 0}
+    - target: {fileID: -5027320272932030371, guid: b86271f9892738c4aa575c446256ae73, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -3745872476781338226, guid: b86271f9892738c4aa575c446256ae73, type: 3}
       propertyPath: m_DirtyAABB
       value: 0
@@ -1149,9 +1183,21 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.0055764643
       objectReference: {fileID: 0}
+    - target: {fileID: -3244238007530547971, guid: b86271f9892738c4aa575c446256ae73, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2767628275975086557, guid: b86271f9892738c4aa575c446256ae73, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b86271f9892738c4aa575c446256ae73, type: 3}
       propertyPath: m_Name
       value: BrokenTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b86271f9892738c4aa575c446256ae73, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b86271f9892738c4aa575c446256ae73, type: 3}
       propertyPath: m_IsActive
@@ -1662,6 +1708,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8061869827109355529, guid: 89e87d0c344425242b6142bfb5fd355c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -5004074729439815274, guid: 89e87d0c344425242b6142bfb5fd355c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -1673,6 +1723,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 89e87d0c344425242b6142bfb5fd355c, type: 3}
       propertyPath: m_Name
       value: turret5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e87d0c344425242b6142bfb5fd355c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 951636146637939270, guid: 89e87d0c344425242b6142bfb5fd355c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7940306847455457151, guid: 89e87d0c344425242b6142bfb5fd355c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1798,13 +1856,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8061869827109355529, guid: 940017625d00e434c95532f8f252822b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 940017625d00e434c95532f8f252822b, type: 3}
       propertyPath: m_Name
       value: Turret3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 940017625d00e434c95532f8f252822b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 940017625d00e434c95532f8f252822b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 951636146637939270, guid: 940017625d00e434c95532f8f252822b, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8669313380632362692, guid: 940017625d00e434c95532f8f252822b, type: 3}
       propertyPath: m_DirtyAABB

@@ -24,7 +24,7 @@ namespace LooneyDog
                 CallDialogue((DialogId)Dialogue);
             } else { 
                 //do nothing
-                Debug.Log("Dialogue already running");
+                //Debug.Log("Dialogue already running");
             }
         }
 

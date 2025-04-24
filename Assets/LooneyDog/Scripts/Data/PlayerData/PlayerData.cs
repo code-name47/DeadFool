@@ -28,14 +28,14 @@ namespace LooneyDog
         {
             if (ShipData.Count== 0)
             {
-                Debug.Log("in the if function empty funciton ");
+                //Debug.Log("in the if function empty funciton ");
                 SaveNewAllShipData1stTIMEONLY();
                 
             }
             else
             {
                 LoadShipData();
-                Debug.Log("in the if function load funciton ");
+                //Debug.Log("in the if function load funciton ");
             }
             SaveAllShipData();
             //dataTester();

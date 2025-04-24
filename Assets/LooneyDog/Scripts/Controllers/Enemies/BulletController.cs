@@ -57,6 +57,12 @@ namespace LooneyDog
                     }
                     Destroy(gameObject);
                 }
+
+            }
+
+            if (other.CompareTag("Obstacles")) {
+                Instantiate(_hitFlash, transform.position, transform.rotation);
+                Destroy(gameObject);
             }
         }
     }

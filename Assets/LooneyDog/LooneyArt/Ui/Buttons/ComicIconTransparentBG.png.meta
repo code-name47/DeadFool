@@ -1,0 +1,488 @@
+fileFormatVersion: 2
+guid: c4bbe2516fe639244a12d8964a3dd25c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 876
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9eb21e6e238ee42bf332e21b7e4552
+      internalID: -1389117078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 750
+        width: 234
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 58, y: 75, z: 55, w: 64}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baffb4aca56023b47bf55e5b726774b0
+      internalID: -1402012375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 774
+        width: 216
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 68, y: 74, z: 58, w: 64}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da01282103c6e4499c638d4d4e7355b
+      internalID: -89019847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_3
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 768
+        width: 216
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 64, y: 82, z: 67, w: 70}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804026d87b2961446abc4dbd80f1a0ef
+      internalID: 951698041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_4
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 780
+        width: 198
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 49, y: 50, z: 50, w: 51}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08bcfe5d031f1a242b4cc7f407ee6226
+      internalID: -1005311958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_5
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 846
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a591dbc18b6126649a9c3ab6cadd56ab
+      internalID: 657389603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_6
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 750
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12e15ce94d8e1a4bb306c2de53cd682
+      internalID: 1353565131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_7
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 516
+        width: 222
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 54, y: 53, z: 55, w: 47}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e58175794237e409a1de291e101c9b
+      internalID: -1130013547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_8
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 534
+        width: 145
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 32, y: 51, z: 0, w: 45}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba39e42c7c8cb614d9eb9cf80e760527
+      internalID: -1171069135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_9
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 522
+        width: 204
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 49, y: 43, z: 54, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf981d9dd4937304a94abd775bafba5b
+      internalID: -2102466139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_10
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 258
+        width: 222
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 54, y: 61, z: 55, w: 48}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81124773c3983ba46af504614fc0bec1
+      internalID: -917202786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_11
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 270
+        width: 216
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 53, y: 54, z: 56, w: 54}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98861da3f5e24764cb449a510390a90f
+      internalID: 253079862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_12
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 270
+        width: 210
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 47, y: 52, z: 48, w: 51}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c406350269e1b6f488f465aa971f16e9
+      internalID: -1449109061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_13
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 24
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 62, y: 65, z: 57, w: 61}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4236e9db88e948b4cbb3220ffa2fcae1
+      internalID: -258253953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComicIconTransparentBG_14
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 18
+        width: 198
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 46, y: 46, z: 39, w: 41}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6a7fe925912a44c8b7a85d570e064a
+      internalID: -269649002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 22630df0e5049b0478e01e675fb4a1ab
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ComicIconTransparentBG_5: 657389603
+      ComicIconTransparentBG_1: -1402012375
+      ComicIconTransparentBG_7: -1130013547
+      ComicIconTransparentBG_4: -1005311958
+      ComicIconTransparentBG_10: -917202786
+      ComicIconTransparentBG_8: -1171069135
+      ComicIconTransparentBG_6: 1353565131
+      ComicIconTransparentBG_3: 951698041
+      ComicIconTransparentBG_13: -258253953
+      ComicIconTransparentBG_9: -2102466139
+      ComicIconTransparentBG_12: -1449109061
+      ComicIconTransparentBG_2: -89019847
+      ComicIconTransparentBG_11: 253079862
+      ComicIconTransparentBG_0: -1389117078
+      ComicIconTransparentBG_14: -269649002
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

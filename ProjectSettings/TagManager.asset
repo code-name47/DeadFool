@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - FX
   - Duck
+  - Obstacles
   layers:
   - Default
   - TransparentFX
@@ -14,13 +15,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grass
+  - Player
+  - Ground
+  - Missiles
+  - Turrets
+  - Collectibles
+  - Obstacles
   - 
   - 
   - 

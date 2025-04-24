@@ -13,16 +13,46 @@ namespace LooneyDog
         [SerializeField] private TextMeshProUGUI _shipDescription;
         [SerializeField] private TextMeshProUGUI _shipName;
 
-        [Header("Button Unloackables")]
+        [Header("Character Button Unloackables")]
         [SerializeField] private Button _buyButton, _selectButton, _selectedButton;
+        [SerializeField] private Button _nextButton, _previousButton;
+
 
         private void Awake()
         {
             _buyButton.onClick.AddListener(OnClickBuyButton);
             _selectButton.onClick.AddListener(OnClickSelectButton);
+            _nextButton.onClick.AddListener(OnClickNextButton);
+            _previousButton.onClick.AddListener(OnClickPreviousButton);
         }
 
         private void OnClickBuyButton() { }
+
+        private void OnClickNextButton() {
+            if (GameManager.Game.Level.PlayerSelectController != null)
+            {
+                GameManager.Game.Level.PlayerSelectController.OnPressedNext();
+            }
+            else
+            {
+                Debug.Log("Error : PlayerSelectController not assigned to LevelManager");
+            }
+            GameManager.Game.Sound.PlayUisound(UiClipId.Swish);
+
+        }
+
+        private void OnClickPreviousButton() {
+
+            if (GameManager.Game.Level.PlayerSelectController != null)
+            {
+                GameManager.Game.Level.PlayerSelectController.OnPressedPrevious();
+            }
+            else
+            {
+                Debug.Log("Error :  PlayerSelectController not assigned to LevelManager");
+            }
+            GameManager.Game.Sound.PlayUisound(UiClipId.Swish);
+        }
 
         private void OnClickSelectButton() {
             GameManager.Game.Skin.SetActiveCharacter(GameManager.Game.Level.PlayerSelectController.ActiveCharacter);

@@ -20,6 +20,7 @@ namespace LooneyDog
 
         public SettingScreen Setting { get => _setting; set => _setting = value; }
         public ShopScreen Shop { get => _shop; set => _shop = value; }
+        public LevelSelectScreen LevelScreen { get => _levelScreen; set => _levelScreen = value; }
 
         /*       public ResultScreen Result { get { return _result; } set { _result = value; } }
 public SplashScreen Splash { get { return _splash; } set { _splash = value; } }
@@ -33,6 +34,7 @@ public TopMenu Top { get { return _topMenu; } set { _topMenu = value; } }*/
         //[SerializeField] private ReviveScreen _revive;
         [SerializeField] private HomeScreen _home;
         [SerializeField] private GameScreen _gameScreen;
+        [SerializeField] private LevelSelectScreen _levelScreen;
         [SerializeField] private SplashScreen _splash;
         [SerializeField] private LoadingScreen _load;
         [SerializeField] private float _fadeScreenDuration;
