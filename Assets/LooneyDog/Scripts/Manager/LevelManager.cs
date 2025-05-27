@@ -18,6 +18,7 @@ namespace LooneyDog
         public GunSelectController GunSelectController { get => _gunSelectController; set => _gunSelectController = value; }
         public KatanaSelectController KatanaSelectController { get => _katanaSelectController; set => _katanaSelectController = value; }
         public CameraController CameraController { get => _cameraController; set => _cameraController = value; }
+        public ObjectPoolController ObjectPooler { get => _objectPooler; set => _objectPooler = value; }
 
         [Header("Level Details")]
         [SerializeField] private int _levelNumber;
@@ -50,6 +51,9 @@ namespace LooneyDog
 
         [Header("LevelSelectSCene")]
         [SerializeField] private Transform _levelGrounds;
+
+        [Header("ObjectPool")]
+        [SerializeField] private ObjectPoolController _objectPooler;
 
 
         private void Update()
@@ -135,8 +139,10 @@ namespace LooneyDog
         }
 
         IEnumerator LevelStartDelay() {
+  
             yield return new WaitForSeconds(_waveStartDelay);
             SetNewWave();
+
         }
         public void SetNewWave() {
             if (_currentWave < CurrentLevelWaveData.Length) {
@@ -183,6 +189,13 @@ namespace LooneyDog
 
         public void LevelWin() {
             Debug.Log("Level Won");
+            //Disable Slow Motion Power Of character
+            //_currentPlayerController.EnableSlowMotion = false;
+        }
+
+        public void GameOver() {
+            //Disable Slow Motion Power Of character
+            //_currentPlayerController.EnableSlowMotion = false;
         }
     }
 }

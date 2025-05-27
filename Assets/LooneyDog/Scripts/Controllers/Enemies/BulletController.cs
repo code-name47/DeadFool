@@ -11,6 +11,7 @@ namespace LooneyDog
         [SerializeField] private float _bulletDamage;
 
         public float BulletDamage { get => _bulletDamage; set => _bulletDamage = value; }
+        public BulletType BulletType { get => _bulletType; set => _bulletType = value; }
 
         private void OnEnable()
         {
@@ -24,7 +25,7 @@ namespace LooneyDog
 
         private void OnTriggerEnter(Collider other)
         {
-            if (_bulletType == BulletType.Enemy)
+            if (BulletType == BulletType.Enemy)
             {
                 if (other.CompareTag("Player"))
                 {
@@ -33,13 +34,15 @@ namespace LooneyDog
                     Instantiate(_hitFlash, transform.position, transform.rotation);
                     if (!playercontroller.IswieldedKatana)
                     {
-                        Destroy(gameObject);
+                        //Destroy(gameObject);
+                        Debug.Log("bullet obstruction tagged as player");
+                        GameManager.Game.Level.ObjectPooler.KillBullet(gameObject);
                         playercontroller.ReduceHeath(_bulletDamage);
                     }
                     else
                     {
                         transform.rotation = other.transform.rotation;
-                        _bulletType = BulletType.Friendly;
+                        BulletType = BulletType.Friendly;
                     }
                 }
             }
@@ -55,14 +58,19 @@ namespace LooneyDog
                     {
                         Debug.Log("No Emeny Body Controller found on Enemy");
                     }
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
+                    Debug.Log("bullet obstruction tagged as enemy");
+                    GameManager.Game.Level.ObjectPooler.KillBullet(gameObject);
                 }
 
             }
 
             if (other.CompareTag("Obstacles")) {
-                Instantiate(_hitFlash, transform.position, transform.rotation);
-                Destroy(gameObject);
+                GameManager.Game.Level.ObjectPooler.SpwanBulletHit(transform);
+                //Instantiate(_hitFlash, transform.position, transform.rotation);
+                //Destroy(gameObject);
+                Debug.Log("bullet obstruction tagged as obtsacles");
+                GameManager.Game.Level.ObjectPooler.KillBullet(gameObject);
             }
         }
     }

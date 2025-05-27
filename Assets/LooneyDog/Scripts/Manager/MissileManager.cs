@@ -71,7 +71,10 @@ namespace LooneyDog
 
         private void CreateMissile(GameObject missile,Transform target, int position) {
             Vector3 HomingPosition = new Vector3(_missilePlaceHolders[position].position.x, missile.transform.position.y, _missilePlaceHolders[position].position.z);
-            MissileController tempHomingMissileController = Instantiate(missile, HomingPosition, _missilePlaceHolders[position].rotation).GetComponent<MissileController>();
+            //MissileController tempHomingMissileController = Instantiate(missile, HomingPosition, _missilePlaceHolders[position].rotation).GetComponent<MissileController>();
+
+            MissileController tempHomingMissileController = GameManager.Game.Level.ObjectPooler.SpwanMissile(_missilePlaceHolders[position], missile.GetComponent<MissileController>().MissileType).GetComponent<MissileController>();
+            
             tempHomingMissileController.Target = target;
             _missiles.Add(tempHomingMissileController);
         }

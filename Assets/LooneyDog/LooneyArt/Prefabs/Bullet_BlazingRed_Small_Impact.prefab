@@ -33375,6 +33375,7 @@ GameObject:
   - component: {fileID: 199995385302582770}
   - component: {fileID: 198472063183687506}
   - component: {fileID: 114355610240550960}
+  - component: {fileID: 1932188078825557791}
   m_Layer: 0
   m_Name: Bullet_BlazingRed_Small_Impact
   m_TagString: Untagged
@@ -38409,12 +38410,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879272669879180}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a895231490da6545890b1e1794f8704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   deathtimer: 5
+--- !u!114 &1932188078825557791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879272669879180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26adb87badd1c9f4db3974d186b2810d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathtimer: 5
+  _bulletId: 0
 --- !u!1 &1947723841646622
 GameObject:
   m_ObjectHideFlags: 0

@@ -85,6 +85,9 @@ MonoBehaviour:
   thicknessModifier:
     overrideState: 1
     value: 1.5
+  zBias:
+    overrideState: 0
+    value: 0.0001
   directLightingStrength:
     overrideState: 0
     value: 0
@@ -132,8 +135,8 @@ MonoBehaviour:
     overrideState: 0
     value: {r: 0.048921324, g: 0.035172652, b: 0.122641504, a: 1}
   fastMode:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   dirtTexture:
     overrideState: 0
     value: {fileID: 0}

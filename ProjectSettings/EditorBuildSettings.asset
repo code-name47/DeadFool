@@ -23,13 +23,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/LooneyDog/Scenes/Dhruv/ShaderTest_Profiles/Game_Test.unity
     guid: c3b129be4a925c04d9e812ba2dc75e30
-  - enabled: 0
+  - enabled: 1
     path: Assets/LooneyDog/Scenes/Dhruv/Game_Test_NewEnv.unity
     guid: 837f80dab3f0baa4ba86e60558a20249
   - enabled: 0
     path: Assets/LooneyDog/Scenes/Dhruv/ShaderTest.unity
     guid: b4360aaab19d726459e285f3025a2df2
-  - enabled: 1
+  - enabled: 0
     path: Assets/LooneyDog/Scenes/Dhruv/Game_Test_HellEnv.unity
     guid: 3ae6e70386bed8547a8f614c611f330c
   - enabled: 0
@@ -43,3 +43,4 @@ EditorBuildSettings:
     guid: f0fdea22274bd994d9079bb7a3a95043
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ccaf8e3c1c9eeec4abf92409fff77ba9, type: 2}
+  m_UseUCBPForAssetBundles: 0

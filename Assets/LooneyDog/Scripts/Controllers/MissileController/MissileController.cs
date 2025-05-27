@@ -8,8 +8,9 @@ namespace LooneyDog
 
         [SerializeField] private GameObject _hitParticle;
         [SerializeField] private Transform target; // Reference to the player or target
-        [SerializeField] private float speed = 10f; // Speed of the missile
-        [SerializeField] private float rotationSpeed = 5f; // Speed at which the missile rotates
+        [SerializeField] private float _speed = 10f; // Speed of the missile
+        [SerializeField] private float _rotationSpeed = 5f; // Speed at which the missile rotates
+        [SerializeField] private float _damage = 50f;
         [SerializeField] private MissileType _missileType;
         [SerializeField] private LayerMask _collidableLayers;
 
@@ -17,6 +18,9 @@ namespace LooneyDog
 
         public MissileType MissileType { get => _missileType; set => _missileType = value; }
         public Transform Target { get => target; set => target = value; }
+        public float Speed { get => _speed; set => _speed = value; }
+        public float RotationSpeed { get => _rotationSpeed; set => _rotationSpeed = value; }
+        public float Damage { get => _damage; set => _damage = value; }
 
         private void Start()
         {
@@ -63,14 +67,14 @@ namespace LooneyDog
                 if (flatTargetDirection != Vector3.zero)
                 {
                     Quaternion lookRotation = Quaternion.LookRotation(flatTargetDirection, Vector3.up);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * RotationSpeed);
                 }
-                rb.AddForce(transform.forward * speed, ForceMode.Force);
+                rb.AddForce(transform.forward * Speed, ForceMode.Force);
             }
         }
 
         private void StraightMissileMovement() {
-            rb.AddForce(transform.forward * speed, ForceMode.Force);
+            rb.AddForce(transform.forward * Speed, ForceMode.Force);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -78,8 +82,10 @@ namespace LooneyDog
             if (other.CompareTag("Player")) {
                 if (other.GetComponent<PlayerController>() != null)
                 {
-                    other.GetComponent<PlayerController>().GettingHit();
+                    other.GetComponent<PlayerController>().GettingHit(Damage);
                     DestroyGameObject();
+
+                    //GameManager.Game.Level.ObjectPooler.KillMissile(this.gameObject);
                 }
                 else
                 {
@@ -92,19 +98,31 @@ namespace LooneyDog
             if (other.CompareTag("Obstacles"))
             {
                 DestroyGameObject();
+                //GameManager.Game.Level.ObjectPooler.KillMissile(this.gameObject);
             }
 
             if (other.CompareTag("Enemy"))
             {
                 DestroyGameObject();
+                if (other.GetComponent<EnemyBodyController>() != null)
+                {
+                    other.GetComponent<EnemyBodyController>().GettingHit(Damage);
+                }
+                else
+                {
+                    Debug.Log("No Emeny Body Controller found on Enemy");
+                }
+                //GameManager.Game.Level.ObjectPooler.KillMissile(this.gameObject);
                 /* Instantiate(_hitParticle, transform.position, Quaternion.identity);
                  Destroy(gameObject);*/
             }
         }
 
         public void DestroyGameObject() {
-            Instantiate(_hitParticle, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            //Instantiate(_hitParticle, transform.position, Quaternion.identity);
+            GameManager.Game.Level.ObjectPooler.SpwanMissileHit(transform);
+            //Destroy(gameObject);
+            GameManager.Game.Level.ObjectPooler.KillMissile(this.gameObject);
         }
     }
 

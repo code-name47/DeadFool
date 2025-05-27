@@ -10,7 +10,7 @@ namespace iOSKeyChainPlugin.iOS.Xcode
 	public class iOSKeyChainPostprocessor
 	{
 		// support for version < Unity 5
-#if !UNITY_5 && !UNITY_2017 && !UNITY_2018 && !UNITY_2019 && !UNITY_2020 && !UNITY_2021 && !UNITY_2022 && !UNITY_2023 && !UNITY_2024 && !UNITY_2025
+#if !UNITY_5 && !UNITY_2017 && !UNITY_2018 && !UNITY_2019 && !UNITY_2020 && !UNITY_2021 && !UNITY_2022 && !UNITY_2023 && !UNITY_2024 && !UNITY_2025 && !UNITY_6000_0_OR_NEWER
 		static readonly string[] sourceFiles = new[]
 		{
 			"KeyChainPlugin.h",

@@ -128,32 +128,34 @@ namespace LooneyDog
         }
 
         public void SlowPanelFade() {
-         
-            _slowMotionPanel.color = Color.Lerp(_slowMotionPanel.color, _semiTransparentColor, _rotSlowPanel);
-            Time.timeScale = Mathf.Lerp(Time.deltaTime, _timeSlowValue, _timeSlowSpeed);
-            Time.fixedDeltaTime = Time.deltaTime * _originalFixedDeltaTime;
-            GameManager.Game.Level.CameraController.ActivateSpeedLines();
-            var TransparentColor = GameManager.Game.Level.CameraController.SpeedLines.startColor;
-            TransparentColor.a = Mathf.Lerp(GameManager.Game.Level.CameraController.SpeedLines.startColor.a, _semiTransparentColor.a, _rotSlowPanel);
-            GameManager.Game.Level.CameraController.SpeedLines.startColor = TransparentColor;
+            if (!_gamePaused)
+            {
+                _slowMotionPanel.color = Color.Lerp(_slowMotionPanel.color, _semiTransparentColor, _rotSlowPanel);
+                Time.timeScale = Mathf.Lerp(Time.deltaTime, _timeSlowValue, _timeSlowSpeed);
+                Time.fixedDeltaTime = Time.deltaTime * _originalFixedDeltaTime;
+                GameManager.Game.Level.CameraController.ActivateSpeedLines();
+                var TransparentColor = GameManager.Game.Level.CameraController.SpeedLines.startColor;
+                TransparentColor.a = Mathf.Lerp(GameManager.Game.Level.CameraController.SpeedLines.startColor.a, _semiTransparentColor.a, _rotSlowPanel);
+                GameManager.Game.Level.CameraController.SpeedLines.startColor = TransparentColor;
+            }
         }
 
         public void SlowPanelUnFade() {
-            
-            _slowMotionPanel.color = Color.Lerp(_slowMotionPanel.color, _fullTransparentColor, _rotSlowPanel);
-            //Time.timeScale = 1;
-            Time.timeScale = Mathf.Lerp(Time.deltaTime, 1, _timeSlowSpeed);
-            Time.fixedDeltaTime = (1/Time.deltaTime) * _originalFixedDeltaTime;
-            
-            var TransparentColor = GameManager.Game.Level.CameraController.SpeedLines.startColor;
-            TransparentColor.a = 0f;
-            GameManager.Game.Level.CameraController.SpeedLines.startColor = TransparentColor;
-            /*var TransparentColor = GameManager.Game.Level.CameraController.SpeedLines.startColor;
-            TransparentColor.a = Mathf.Lerp(GameManager.Game.Level.CameraController.SpeedLines.startColor.a, _fullTransparentColor.a, _rotSlowPanel/2f);
-            GameManager.Game.Level.CameraController.SpeedLines.startColor = TransparentColor;*/
-            GameManager.Game.Level.CameraController.DeActivateSpeedLinnes();
+            if (!_gamePaused)
+            {
+                _slowMotionPanel.color = Color.Lerp(_slowMotionPanel.color, _fullTransparentColor, _rotSlowPanel);
+                //Time.timeScale = 1;
+                Time.timeScale = Mathf.Lerp(Time.deltaTime, 1, _timeSlowSpeed);
+                Time.fixedDeltaTime = (1 / Time.deltaTime) * _originalFixedDeltaTime;
 
-            
+                var TransparentColor = GameManager.Game.Level.CameraController.SpeedLines.startColor;
+                TransparentColor.a = 0f;
+                GameManager.Game.Level.CameraController.SpeedLines.startColor = TransparentColor;
+                /*var TransparentColor = GameManager.Game.Level.CameraController.SpeedLines.startColor;
+                TransparentColor.a = Mathf.Lerp(GameManager.Game.Level.CameraController.SpeedLines.startColor.a, _fullTransparentColor.a, _rotSlowPanel/2f);
+                GameManager.Game.Level.CameraController.SpeedLines.startColor = TransparentColor;*/
+                GameManager.Game.Level.CameraController.DeActivateSpeedLinnes();
+            }    
         }
 
         private void OnClickPausePanel() {

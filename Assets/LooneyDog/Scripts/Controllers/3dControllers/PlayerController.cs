@@ -31,6 +31,9 @@ namespace LooneyDog
         [Header("CharacterTrails")]
         [SerializeField] private ParticleSystem _cloudDustTrail;
 
+        
+
+
         public bool IswieldedKatana { get => _iswieldedKatana; set => _iswieldedKatana = value; }
         public GunController GunLeft { get => _gunLeft; set => _gunLeft = value; }
         public KatanaController Katana { get => _katana; set => _katana = value; }
@@ -62,7 +65,7 @@ namespace LooneyDog
         }
         private void Update()
         {
-            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.linearVelocity = Vector3.zero;
             RecoverHealth();
             if (!_isGettingHit)
             {
@@ -78,7 +81,10 @@ namespace LooneyDog
                     }
                 }
             }
-            TimeSlow();
+            //if (!_isPlayerDead)
+            //{
+                TimeSlow();
+            //}
             
         }
       
@@ -175,7 +181,8 @@ namespace LooneyDog
 
 
         //------------------------------------------Character getting Hit ------------------------------
-        public void GettingHit() {
+        public void GettingHit(float damage) {
+            ReduceHeath(damage);
             PlayerAnimator.SetTrigger("GettingHit");
             //_dialogueController.CallDialogue(DialogId.Ouch);
             _dialogueController.CallGettingHitDialogue();
@@ -244,7 +251,7 @@ namespace LooneyDog
             _isPlayerDead = true;
             _playerAnimator.SetBool("Dead", _isPlayerDead);
             SetUnArmed();
-
+            _playerImmortal = true;
             StartCoroutine(WaitForScreen());
         }
 
@@ -265,6 +272,7 @@ namespace LooneyDog
             yield return new WaitForSeconds(_reviveDelay);
             _isPlayerDead = false;
             _playerHealth = _playerTotalHealth;
+            _playerImmortal = false;
         }
 
         //------------------------------------------End Player Dieing ---------------------------------------
@@ -294,13 +302,19 @@ namespace LooneyDog
         //------------------------------------------ End Of Character Trails ---------------------------
         //------------------------------------------Time Slow -------------------------------
         private void TimeSlow() {
-            if (_playerDirection != Vector2.zero)
+            if (!_isPlayerDead)
             {
-                GameManager.Game.Screen.GameScreen.SlowPanelUnFade();
+                if (_playerDirection != Vector2.zero)
+                {
+                    GameManager.Game.Screen.GameScreen.SlowPanelUnFade();
+                }
+                else
+                {
+                    GameManager.Game.Screen.GameScreen.SlowPanelFade();
+                }
             }
-            else
-            {
-                GameManager.Game.Screen.GameScreen.SlowPanelFade();
+            else {
+                GameManager.Game.Screen.GameScreen.SlowPanelUnFade();
             }
         }
 

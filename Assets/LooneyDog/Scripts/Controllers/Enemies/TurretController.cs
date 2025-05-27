@@ -26,6 +26,7 @@ namespace LooneyDog
         private void OnEnable()
         {
             _enemyBodyController.Health = _startingHealth;
+            _bulletController.BulletType = BulletType.Enemy;
             //ApplyBaseRotation(TurretBaseRotation);
         }
 
@@ -85,15 +86,19 @@ namespace LooneyDog
         }
 
         public void FireLeft() {
-            Instantiate(_bulletMuzzle, _bulletSpwanLeftPoint.transform.position, Quaternion.LookRotation(_bulletSpwanLeftPoint.transform.forward));
-            _bulletController.BulletDamage = _turretDamage;
-            Instantiate(_bulletController.gameObject, _bulletSpwanLeftPoint.transform.position, Quaternion.LookRotation(_bulletSpwanLeftPoint.transform.forward));
+            //Instantiate(_bulletMuzzle, _bulletSpwanLeftPoint.transform.position, Quaternion.LookRotation(_bulletSpwanLeftPoint.transform.forward));
+            GameManager.Game.Level.ObjectPooler.SpwanMuzzleFlash(_bulletSpwanLeftPoint.transform);
+            //_bulletController.BulletDamage = _turretDamage;
+            //Instantiate(_bulletController.gameObject, _bulletSpwanLeftPoint.transform.position, Quaternion.LookRotation(_bulletSpwanLeftPoint.transform.forward));
+            GameManager.Game.Level.ObjectPooler.SpwanBasicBullet(_bulletSpwanLeftPoint.transform, _turretDamage,BulletType.Enemy);
         }
         public void FireRight()
         {
-            Instantiate(_bulletMuzzle, _bulletSpwanRightPoint.transform.position, Quaternion.LookRotation(_bulletSpwanRightPoint.transform.forward));
-            _bulletController.BulletDamage = _turretDamage;
-            Instantiate(_bulletController.gameObject, _bulletSpwanRightPoint.transform.position, Quaternion.LookRotation(_bulletSpwanRightPoint.transform.forward));
+            //Instantiate(_bulletMuzzle, _bulletSpwanRightPoint.transform.position, Quaternion.LookRotation(_bulletSpwanRightPoint.transform.forward));
+            GameManager.Game.Level.ObjectPooler.SpwanMuzzleFlash(_bulletSpwanRightPoint.transform);
+            //_bulletController.BulletDamage = _turretDamage;
+            //Instantiate(_bulletController.gameObject, _bulletSpwanRightPoint.transform.position, Quaternion.LookRotation(_bulletSpwanRightPoint.transform.forward));
+            GameManager.Game.Level.ObjectPooler.SpwanBasicBullet(_bulletSpwanRightPoint.transform, _turretDamage, BulletType.Enemy);
         }
 
         public void FireDouble() {
